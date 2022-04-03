@@ -30,3 +30,10 @@ To support additional languages, please visit the tutorial on
 apps](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
 
 flutter packages pub run build_runner build
+
+## Publicando web
+Rode o comando:
+
+flutter build web
+
+Em seguida, vá ate a /build/web e copie todo o conteúdo para /docs
