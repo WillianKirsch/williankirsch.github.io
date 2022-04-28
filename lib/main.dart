@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'src/app.dart';
+import 'src/presentation/single_page.dart';
 import 'src/sample_feature/sample_item_details_view.dart';
 import 'src/sample_feature/sample_item_list_view.dart';
 import 'src/settings/settings_controller.dart';
@@ -43,6 +44,8 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
+        ChildRoute(SinglePage.routeName,
+            child: (context, args) => const SinglePage()),
         ChildRoute(SampleItemListView.routeName,
             child: (context, args) => const SampleItemListView()),
         ChildRoute(SettingsView.routeName,
