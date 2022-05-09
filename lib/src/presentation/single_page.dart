@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-import 'package:williankirsch/core/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:williankirsch/src/core/constants.dart';
 
-import 'home/home.dart';
+import 'sessions/about.dart';
+import 'sessions/contact.dart';
+import 'sessions/home.dart';
 import 'navBarLogo.dart';
 
 class SinglePage extends StatefulWidget {
@@ -18,24 +20,24 @@ class SinglePage extends StatefulWidget {
 class _SinglePageState extends State<SinglePage> {
   final ScrollController _scrollController =
       ScrollController(initialScrollOffset: 25.0);
-  ItemScrollController _itemScrollController = ItemScrollController();
-  ItemPositionsListener _itemPositionListener = ItemPositionsListener.create();
+  final _itemScrollController = ItemScrollController();
+  final _itemPositionListener = ItemPositionsListener.create();
 
   final List<String> _sectionsName = [
     "Início",
     "Sobre",
-    "Educação",
-    "Experiência",
-    "Certificados",
+    // "Educação",
+    // "Experiência",
+    // "Certificados",
     "Contato",
   ];
 
   final List<IconData> _sectionsIcons = [
     Icons.home,
     Icons.person,
-    Icons.school,
-    Icons.work,
-    Icons.emoji_events,
+    // Icons.school,
+    // Icons.work,
+    // Icons.emoji_events,
     Icons.phone,
   ];
 
@@ -49,10 +51,12 @@ class _SinglePageState extends State<SinglePage> {
   Widget sectionWidget(int i) {
     if (i == 0) {
       return Home();
+    } else if (i == 1) {
+      return About();
+    } else if (i == 2) {
+      return Contact();
     }
-    //else if (i == 1) {
-    //   return About();
-    // } else if (i == 2) {
+    //else if (i == 2) {
     //   return EducationDesktop();
     // } else if (i == 3) {
     //   return Skills();
@@ -82,15 +86,18 @@ class _SinglePageState extends State<SinglePage> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Colors.blue[400],
       extendBodyBehindAppBar: true,
-      // appBar: MediaQuery.of(context).size.width > 1000
-      //     ? _appBarTabDesktop()
-      //     : AppBar(
-      //         backgroundColor: Colors.transparent,
-      //         elevation: 0.0,
-      //       ),
+      appBar: width > 1000
+          ? _appBarTabDesktop()
+          : AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0.0,
+            ),
       drawer: MediaQuery.of(context).size.width < 1000 ? _appBarMobile() : null,
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -142,7 +149,7 @@ class _SinglePageState extends State<SinglePage> {
           );
   }
 
-  Widget _appBarTabDesktop() {
+  PreferredSizeWidget _appBarTabDesktop() {
     return AppBar(
       elevation: 0.0,
       backgroundColor: Colors.transparent,
