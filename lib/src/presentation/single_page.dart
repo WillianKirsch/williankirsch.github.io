@@ -3,10 +3,12 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:williankirsch/src/core/constants.dart';
 
+import 'navBarLogo.dart';
 import 'sessions/about.dart';
 import 'sessions/contact.dart';
+import 'sessions/education.dart';
 import 'sessions/home.dart';
-import 'navBarLogo.dart';
+import 'sessions/achvements.dart';
 
 class SinglePage extends StatefulWidget {
   const SinglePage({Key? key}) : super(key: key);
@@ -26,17 +28,16 @@ class _SinglePageState extends State<SinglePage> {
   final List<String> _sectionsName = [
     "Início",
     "Sobre",
-    // "Educação",
-    // "Experiência",
-    // "Certificados",
+    "Educação",
+    "Certificados",
     "Contato",
   ];
 
   final List<IconData> _sectionsIcons = [
     Icons.home,
     Icons.person,
-    // Icons.school,
-    // Icons.work,
+    Icons.school,
+    Icons.work,
     // Icons.emoji_events,
     Icons.phone,
   ];
@@ -54,11 +55,14 @@ class _SinglePageState extends State<SinglePage> {
     } else if (i == 1) {
       return About();
     } else if (i == 2) {
+      return Education();
+    } else if (i == 3) {
+      return Achvements();
+    } else if (i == 4) {
       return Contact();
     }
-    //else if (i == 2) {
-    //   return EducationDesktop();
-    // } else if (i == 3) {
+
+    //else if (i == 3) {
     //   return Skills();
     // } else if (i == 4) {
     //   return Experience();
