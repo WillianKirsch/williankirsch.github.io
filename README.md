@@ -37,3 +37,6 @@ Rode o comando:
 flutter build web
 
 Em seguida, vá ate a /build/web e copie todo o conteúdo para /docs
+
+flutter build web --web-renderer html
+flutter build web --web-renderer canvaskit
