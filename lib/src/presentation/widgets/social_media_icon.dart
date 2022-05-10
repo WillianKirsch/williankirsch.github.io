@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:williankirsch/src/core/core.dart';
 
 class SocialMediaIconBtn extends StatelessWidget {
-  final String icon;
-  final String socialLink;
-  final double height;
-  final double horizontalPadding;
-
   const SocialMediaIconBtn({
     Key? key,
     required this.icon,
@@ -30,4 +25,9 @@ class SocialMediaIconBtn extends StatelessWidget {
       ),
     );
   }
+
+  final String icon;
+  final String socialLink;
+  final double height;
+  final double horizontalPadding;
 }

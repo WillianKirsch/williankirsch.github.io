@@ -23,7 +23,7 @@ class Achvements extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "Certificados",
+            'Certificados',
             style: TextStyle(
               fontSize: height * 0.06,
               fontWeight: FontWeight.w100,
@@ -84,10 +84,10 @@ class Achvements extends StatelessWidget {
                 side: BorderSide(color: Colors.blue)),
             onPressed: () {
               goToUrl(
-                  "https://drive.google.com/drive/folders/0BzzA1Bzcgvz9NUoxbzNpQ21Kblk?resourcekey=0-u_bby4CvUvFFCIfs3w09fg&usp=sharing");
+                  'https://drive.google.com/drive/folders/0BzzA1Bzcgvz9NUoxbzNpQ21Kblk?resourcekey=0-u_bby4CvUvFFCIfs3w09fg&usp=sharing');
             },
             child: Text(
-              "Veja mais",
+              'Veja mais',
               style: TextStyle(
                 fontWeight: FontWeight.w200,
               ),

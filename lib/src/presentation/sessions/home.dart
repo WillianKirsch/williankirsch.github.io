@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:williankirsch/src/core/core.dart';
-import 'package:williankirsch/src/presentation/widgets/socialMediaIcon.dart';
+import 'package:williankirsch/src/presentation/widgets/social_media_icon.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

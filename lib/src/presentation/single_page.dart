@@ -5,10 +5,12 @@ import 'package:williankirsch/src/core/constants.dart';
 
 import 'navBarLogo.dart';
 import 'sessions/about.dart';
+import 'sessions/achvements.dart';
 import 'sessions/contact.dart';
 import 'sessions/education.dart';
 import 'sessions/home.dart';
-import 'sessions/achvements.dart';
+import 'widgets/arrow_on_top.dart';
+import 'widgets/footer.dart';
 
 class SinglePage extends StatefulWidget {
   const SinglePage({Key? key}) : super(key: key);
@@ -26,11 +28,11 @@ class _SinglePageState extends State<SinglePage> {
   final _itemPositionListener = ItemPositionsListener.create();
 
   final List<String> _sectionsName = [
-    "Início",
-    "Sobre",
-    "Educação",
-    "Certificados",
-    "Contato",
+    'Início',
+    'Sobre',
+    'Educação',
+    'Certificados',
+    'Contato',
   ];
 
   final List<IconData> _sectionsIcons = [
@@ -45,33 +47,31 @@ class _SinglePageState extends State<SinglePage> {
   void _scroll(int position) {
     _itemScrollController.scrollTo(
       index: position,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
     );
   }
 
   Widget sectionWidget(int i) {
     if (i == 0) {
-      return Home();
+      return const Home();
     } else if (i == 1) {
-      return About();
+      return const About();
     } else if (i == 2) {
       return Education();
     } else if (i == 3) {
-      return Achvements();
+      return const Achvements();
     } else if (i == 4) {
-      return Contact();
-    } else if (i == 8) {
+      return const Contact();
+    } else if (i == 5) {
       return SizedBox(
         height: 40.0,
       );
-    } else if (i == 9) {
-      // return ArrowOnTop(
-      //   onPressed: () => _scroll(0),
-      // );
-      return Container();
-    } else if (i == 10) {
-      //return Footer();
-      return Container();
+    } else if (i == 6) {
+      return ArrowOnTop(
+        onPressed: () => _scroll(0),
+      );
+    } else if (i == 7) {
+      return const Footer();
     } else {
       return Container();
     }
@@ -164,7 +164,7 @@ class _SinglePageState extends State<SinglePage> {
             ),
             onPressed: _getResume,
             child: Text(
-              "Currículo",
+              'Currículo',
               style: TextStyle(
                 fontWeight: FontWeight.w200,
               ),
@@ -212,7 +212,7 @@ class _SinglePageState extends State<SinglePage> {
                       color: Colors.red,
                     ),
                     title: Text(
-                      "Currículo",
+                      'Currículo',
                       style: TextStyle(
                         fontWeight: FontWeight.w200,
                       ),
