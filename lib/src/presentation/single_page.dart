@@ -63,7 +63,7 @@ class _SinglePageState extends State<SinglePage> {
     } else if (i == 4) {
       return const Contact();
     } else if (i == 5) {
-      return SizedBox(
+      return const SizedBox(
         height: 40.0,
       );
     } else if (i == 6) {
@@ -121,7 +121,7 @@ class _SinglePageState extends State<SinglePage> {
               onPressed: () => _scroll(index),
               child: Text(
                 childText,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
             ),
           )
@@ -163,7 +163,7 @@ class _SinglePageState extends State<SinglePage> {
               borderRadius: BorderRadius.circular(5.0),
             ),
             onPressed: _getResume,
-            child: Text(
+            child: const Text(
               'Currículo',
               style: TextStyle(
                 fontWeight: FontWeight.w200,
@@ -191,7 +191,7 @@ class _SinglePageState extends State<SinglePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
+              const Center(
                 child: NavBarLogo(
                   height: 28,
                 ),
@@ -204,9 +204,9 @@ class _SinglePageState extends State<SinglePage> {
                   hoverColor: Colors.blue.withAlpha(150),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0),
-                      side: BorderSide(color: Colors.blue)),
+                      side: const BorderSide(color: Colors.blue)),
                   onPressed: _getResume,
-                  child: ListTile(
+                  child: const ListTile(
                     leading: Icon(
                       Icons.book,
                       color: Colors.red,

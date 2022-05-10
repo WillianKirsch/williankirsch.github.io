@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ArrowOnTop extends StatefulWidget {
-  final VoidCallback? onPressed;
-
   const ArrowOnTop({Key? key, this.onPressed}) : super(key: key);
+
+  final VoidCallback? onPressed;
 
   @override
   _ArrowOnTopState createState() => _ArrowOnTopState();
@@ -32,7 +32,7 @@ class _ArrowOnTopState extends State<ArrowOnTop> {
           child: Container(
             decoration: BoxDecoration(
               color: Colors.grey[900],
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(8.0),
                 bottomLeft: Radius.circular(8.0),
               ),
@@ -41,7 +41,7 @@ class _ArrowOnTopState extends State<ArrowOnTop> {
                       BoxShadow(
                         color: Colors.blue.withAlpha(200),
                         blurRadius: 12.0,
-                        offset: Offset(2.0, 3.0),
+                        offset: const Offset(2.0, 3.0),
                       )
                     ]
                   : [],

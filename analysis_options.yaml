@@ -18,7 +18,7 @@ linter:
     - annotate_overrides
     # - avoid_as // Recomendation was deprecated: https://dart-lang.github.io/linter/lints/avoid_as.html
     - avoid_bool_literals_in_conditional_expressions
-    - avoid_classes_with_only_static_members
+    # - avoid_classes_with_only_static_members
     - avoid_empty_else
     - avoid_field_initializers_in_const_classes
     # - avoid_function_literals_in_foreach_calls // Desnecessária, internamente é a mesma impl

@@ -1,18 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:williankirsch/src/core/core.dart';
 
 class PortfolioCard extends StatefulWidget {
-  final String? projectIcon;
-  final IconData? projectIconData;
-  final String projectTitle;
-  final String projectDescription;
-  final String? projectLink;
-  final double? cardWidth;
-  final double? cardHeight;
-  final String? backImage;
-  final Widget? bottomWidget;
-
   const PortfolioCard({
     Key? key,
     this.projectIcon,
@@ -25,6 +14,17 @@ class PortfolioCard extends StatefulWidget {
     this.cardWidth,
     this.cardHeight,
   }) : super(key: key);
+
+  final String? projectIcon;
+  final IconData? projectIconData;
+  final String projectTitle;
+  final String projectDescription;
+  final String? projectLink;
+  final double? cardWidth;
+  final double? cardHeight;
+  final String? backImage;
+  final Widget? bottomWidget;
+
   @override
   _ProjectCardState createState() => _ProjectCardState();
 }

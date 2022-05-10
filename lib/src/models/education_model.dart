@@ -1,15 +1,14 @@
 class EducationModel {
-  final String description;
-  final String linkName;
-  final String period;
-  final String name;
-
   EducationModel({
     required this.description,
     required this.linkName,
     required this.period,
     required this.name,
   });
+  final String description;
+  final String linkName;
+  final String period;
+  final String name;
 }
 
 List<EducationModel> getEducationList() {

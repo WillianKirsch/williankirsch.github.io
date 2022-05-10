@@ -81,12 +81,12 @@ class Achvements extends StatelessWidget {
             hoverColor: Colors.blue.withAlpha(150),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0),
-                side: BorderSide(color: Colors.blue)),
+                side: const BorderSide(color: Colors.blue)),
             onPressed: () {
               goToUrl(
                   'https://drive.google.com/drive/folders/0BzzA1Bzcgvz9NUoxbzNpQ21Kblk?resourcekey=0-u_bby4CvUvFFCIfs3w09fg&usp=sharing');
             },
-            child: Text(
+            child: const Text(
               'Veja mais',
               style: TextStyle(
                 fontWeight: FontWeight.w200,

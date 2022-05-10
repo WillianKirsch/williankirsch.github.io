@@ -2,14 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:williankirsch/src/core/core.dart';
 
 class CertificatesCard extends StatefulWidget {
-  final String projectTitle;
-  final String projectDescription;
-  final String projectLink;
-  final double? cardWidth;
-  final double? cardHeight;
-  final String? backImage;
-  final Widget? bottomWidget;
-
   const CertificatesCard({
     Key? key,
     this.backImage,
@@ -20,6 +12,15 @@ class CertificatesCard extends StatefulWidget {
     this.cardWidth,
     this.cardHeight,
   }) : super(key: key);
+
+  final String projectTitle;
+  final String projectDescription;
+  final String projectLink;
+  final double? cardWidth;
+  final double? cardHeight;
+  final String? backImage;
+  final Widget? bottomWidget;
+
   @override
   _CertificatesCardState createState() => _CertificatesCardState();
 }
@@ -55,7 +56,7 @@ class _CertificatesCardState extends State<CertificatesCard> {
                     BoxShadow(
                       color: Colors.blue.withAlpha(200),
                       blurRadius: 12.0,
-                      offset: Offset(2.0, 3.0),
+                      offset: const Offset(2.0, 3.0),
                     )
                   ]
                 : []),
@@ -96,7 +97,7 @@ class _CertificatesCardState extends State<CertificatesCard> {
               ],
             ),
             AnimatedOpacity(
-              duration: Duration(milliseconds: 400),
+              duration: const Duration(milliseconds: 400),
               opacity: isHover ? 0.0 : 1.0,
               child: FittedBox(
                 fit: BoxFit.fitHeight,

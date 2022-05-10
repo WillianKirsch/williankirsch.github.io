@@ -3,6 +3,8 @@ import 'package:williankirsch/src/core/core.dart';
 import 'package:williankirsch/src/models/education_model.dart';
 
 class Education extends StatelessWidget {
+  Education({Key? key}) : super(key: key);
+
   bool isHover = false;
 
   @override
@@ -45,7 +47,7 @@ class Education extends StatelessWidget {
                             children: [
                               Text(
                                 education.name,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
                                   fontSize: 20.0,
@@ -53,25 +55,25 @@ class Education extends StatelessWidget {
                               ),
                               Text(
                                 education.period,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w100,
                                   fontSize: 15.0,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5.0,
                               ),
                               Text(
                                 education.description,
                                 maxLines: 4,
                                 overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.amber,
                                   height: 1.5,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 20.0,
                               ),
                               MouseRegion(
@@ -80,14 +82,14 @@ class Education extends StatelessWidget {
                                   onTap: () => goToUrl(education.linkName),
                                   child: Text(
                                     education.linkName,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Colors.blue,
                                       decoration: TextDecoration.underline,
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 40.0,
                               )
                             ],
