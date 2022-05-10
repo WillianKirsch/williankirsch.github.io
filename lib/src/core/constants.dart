@@ -48,31 +48,27 @@ final tools = [
 
 //certificates
 final myCertificatesBanner = [
-  "assets/images/x.png",
-  "assets/images/y.jpg",
-  "assets/images/z.jpg",
-  "assets/images/a.jpg",
+  "https://drive.google.com/file/d/1fFxZqB73E1hZ3d_Z8XyNIDAPHTYrNOQl/view?usp=sharing",
+  "https://drive.google.com/file/d/1RNHtik8sKQKMYEMxBdaa6UB_N5iakdH9/view?usp=sharing",
+  "https://drive.google.com/file/d/1owja6-NnlxlFW4AVY-htaFsl--PbKNbx/view?usp=sharing",
 ];
 
 final myCertificatesTitles = [
-  "Title",
-  "Title",
-  "Title",
-  "Title",
+  "Toro Investimentos",
+  "TDC - The Developers Conference",
+  "Flutter",
 ];
 
 final myCertificatesDescriptions = [
-  "Description",
-  "Description",
-  "Description",
-  "Description",
+  "Academia de treinamentos internos.",
+  "Participação de eventos.",
+  "Cursos relacionados a Flutter.",
 ];
 
 final myCertificatesLinks = [
-  "https://drive.google.com/file/d/",
-  "https://drive.google.com/file/d/",
-  "https://drive.google.com/file/d/",
-  "https://drive.google.com/file/d/",
+  "https://drive.google.com/drive/folders/1QifptRZsAEHTUqeoRSFDh8LUJ_r9tV8M?usp=sharing",
+  "https://drive.google.com/drive/folders/0BzzA1Bzcgvz9NUoxbzNpQ21Kblk?resourcekey=0-u_bby4CvUvFFCIfs3w09fg&usp=sharing",
+  "https://drive.google.com/drive/folders/1H43vVYuCIJOUOBLhYrVqsFl5FJ1VpFRj?usp=sharing",
 ];
 
 // Contact
