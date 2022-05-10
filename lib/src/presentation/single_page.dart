@@ -60,38 +60,27 @@ class _SinglePageState extends State<SinglePage> {
       return Achvements();
     } else if (i == 4) {
       return Contact();
-    }
-
-    //else if (i == 3) {
-    //   return Skills();
-    // } else if (i == 4) {
-    //   return Experience();
-    // } else if (i == 5) {
-    //   return Portfolio();
-    // } else if (i == 6) {
-    //   return Certificates();
-    // } else if (i == 7) {
-    //   return Contact();
-    // } else if (i == 8) {
-    //   return SizedBox(
-    //     height: 40.0,
-    //   );
-    // } else if (i == 9) {
-    //   return ArrowOnTop(
-    //     onPressed: () => _scroll(0),
-    //   );
-    // } else if (i == 10) {
-    //   return Footer();
-    //}
-    else {
+    } else if (i == 8) {
+      return SizedBox(
+        height: 40.0,
+      );
+    } else if (i == 9) {
+      // return ArrowOnTop(
+      //   onPressed: () => _scroll(0),
+      // );
+      return Container();
+    } else if (i == 10) {
+      //return Footer();
+      return Container();
+    } else {
       return Container();
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       backgroundColor: Colors.blue[400],

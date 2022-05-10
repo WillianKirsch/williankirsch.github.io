@@ -14,12 +14,14 @@ final socialIcons = [
   Images.linkedin,
   Images.github,
   Images.instagram,
+  Images.instagram,
 ];
 
 const socialLinks = [
   "https://www.linkedin.com/in/williankirsch",
   "https://github.com/williankirsch",
   "https://www.instagram.com/williankirsch.dev",
+  "https://developers.google.com/profile/u/williankirsch"
 ];
 
 // Tools & Tech
@@ -48,9 +50,9 @@ final tools = [
 
 //certificates
 final myCertificatesBanner = [
-  "https://drive.google.com/file/d/1fFxZqB73E1hZ3d_Z8XyNIDAPHTYrNOQl/view?usp=sharing",
-  "https://drive.google.com/file/d/1RNHtik8sKQKMYEMxBdaa6UB_N5iakdH9/view?usp=sharing",
-  "https://drive.google.com/file/d/1owja6-NnlxlFW4AVY-htaFsl--PbKNbx/view?usp=sharing",
+  "assets/terceiros/toro.png",
+  "assets/terceiros/tdc.jpeg",
+  "assets/terceiros/flutter-capa.png",
 ];
 
 final myCertificatesTitles = [
@@ -66,9 +68,9 @@ final myCertificatesDescriptions = [
 ];
 
 final myCertificatesLinks = [
-  "https://drive.google.com/drive/folders/1QifptRZsAEHTUqeoRSFDh8LUJ_r9tV8M?usp=sharing",
-  "https://drive.google.com/drive/folders/0BzzA1Bzcgvz9NUoxbzNpQ21Kblk?resourcekey=0-u_bby4CvUvFFCIfs3w09fg&usp=sharing",
-  "https://drive.google.com/drive/folders/1H43vVYuCIJOUOBLhYrVqsFl5FJ1VpFRj?usp=sharing",
+  "https://drive.google.com/drive/folders/1QifptRZsAEHTUqeoRSFDh8LUJ_r9tV8M",
+  "https://drive.google.com/drive/folders/0BzzA1Bzcgvz9NUoxbzNpQ21Kblk?resourcekey=0-u_bby4CvUvFFCIfs3w09fg",
+  "https://drive.google.com/drive/folders/1H43vVYuCIJOUOBLhYrVqsFl5FJ1VpFRj",
 ];
 
 // Contact

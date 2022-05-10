@@ -34,8 +34,8 @@ class _ProjectCardState extends State<PortfolioCard> {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return InkWell(
       onTap: widget.projectLink != null
           ? () => goToUrl(widget.projectLink!)
@@ -54,7 +54,6 @@ class _ProjectCardState extends State<PortfolioCard> {
       child: Container(
         width: widget.cardWidth,
         height: widget.cardHeight,
-        padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
         decoration: BoxDecoration(
             color: Colors.grey[900],
             borderRadius: BorderRadius.circular(8.0),

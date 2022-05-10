@@ -8,15 +8,17 @@ class Contact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
 
-    double _cardWidth = width < 1200 ? width * 0.75 : width * 0.3;
-    double _cardHeight = width < 1200 ? height * 0.28 : height * 0.25;
+    final double _cardWidth = width < 1200 ? width * 0.75 : width * 0.28;
+    final double _cardHeight = width < 1200 ? height * 0.25 : height * 0.30;
 
     return Container(
       padding: EdgeInsets.symmetric(
-          horizontal: width * 0.02, vertical: height * 0.02),
+        horizontal: width * 0.04,
+        vertical: height * 0.04,
+      ),
       child: Column(
         children: [
           Text(
@@ -64,7 +66,7 @@ class Contact extends StatelessWidget {
                 projectDescription: myContactDetails[2],
               ),
             ],
-          )
+          ),
         ],
       ),
     );

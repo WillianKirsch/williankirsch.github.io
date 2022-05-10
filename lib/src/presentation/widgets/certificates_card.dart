@@ -47,7 +47,6 @@ class _CertificatesCardState extends State<CertificatesCard> {
       child: Container(
         width: widget.cardWidth,
         height: widget.cardHeight,
-        padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
         decoration: BoxDecoration(
             color: Colors.grey[900],
             borderRadius: BorderRadius.circular(8.0),
@@ -100,7 +99,7 @@ class _CertificatesCardState extends State<CertificatesCard> {
               duration: Duration(milliseconds: 400),
               opacity: isHover ? 0.0 : 1.0,
               child: FittedBox(
-                fit: BoxFit.fill,
+                fit: BoxFit.fitHeight,
                 child: widget.backImage != null
                     ? Image.asset(widget.backImage!)
                     : Container(),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:williankirsch/src/core/core.dart';
 
 class SocialMediaIconBtn extends StatelessWidget {
