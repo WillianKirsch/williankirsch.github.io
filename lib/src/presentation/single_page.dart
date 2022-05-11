@@ -98,7 +98,7 @@ class _SinglePageState extends State<SinglePage> {
           itemPositionsListener: _itemPositionListener,
           itemCount: 8,
           itemBuilder: (context, index) {
-            return sectionWidget(index);
+            return SingleChildScrollView(child: sectionWidget(index));
           },
         ),
       ),
