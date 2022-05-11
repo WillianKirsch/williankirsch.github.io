@@ -22,8 +22,6 @@ class SinglePage extends StatefulWidget {
 }
 
 class _SinglePageState extends State<SinglePage> {
-  final ScrollController _scrollController =
-      ScrollController(initialScrollOffset: 25.0);
   final _itemScrollController = ItemScrollController();
   final _itemPositionListener = ItemPositionsListener.create();
 
@@ -95,18 +93,13 @@ class _SinglePageState extends State<SinglePage> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        child: RawScrollbar(
-          controller: _scrollController,
-          thumbColor: Colors.blue,
-          thickness: 5.0,
-          child: ScrollablePositionedList.builder(
-            itemScrollController: _itemScrollController,
-            itemPositionsListener: _itemPositionListener,
-            itemCount: 8,
-            itemBuilder: (context, index) {
-              return sectionWidget(index);
-            },
-          ),
+        child: ScrollablePositionedList.builder(
+          itemScrollController: _itemScrollController,
+          itemPositionsListener: _itemPositionListener,
+          itemCount: 8,
+          itemBuilder: (context, index) {
+            return sectionWidget(index);
+          },
         ),
       ),
     );
