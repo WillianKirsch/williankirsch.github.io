@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'settings/settings_controller.dart';
+import 'settings/themes.dart';
 
 /// The Widget that configures your application.
 class AppWidget extends StatelessWidget {
@@ -30,11 +31,19 @@ class AppWidget extends StatelessWidget {
           // The appTitle is defined in .arb files found in the localization
           // directory.
           title: 'Willian Kirsch',
-
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
-          theme: ThemeData(),
+          theme: ThemeData(
+            primaryColor: kPrimaryColor,
+            colorScheme: const ColorScheme.light(),
+            iconTheme: const IconThemeData(color: Colors.red),
+            primarySwatch: Colors.yellow,
+            scaffoldBackgroundColor: Colors.blue[400],
+            textButtonTheme: TextButtonThemeData(
+                style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all(Colors.green))),
+          ),
           darkTheme: ThemeData.dark(),
           themeMode: settingsController.themeMode,
 

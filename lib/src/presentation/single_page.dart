@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:williankirsch/src/core/constants.dart';
+import 'package:williankirsch/src/settings/settings_controller.dart';
 
 import 'navBarLogo.dart';
 import 'sessions/about.dart';
@@ -11,10 +12,15 @@ import 'sessions/education.dart';
 import 'sessions/home.dart';
 import 'widgets/arrow_on_top.dart';
 import 'widgets/footer.dart';
+import 'widgets/theme_switch.dart';
 
 class SinglePage extends StatefulWidget {
-  const SinglePage({Key? key}) : super(key: key);
+  const SinglePage({
+    Key? key,
+    required this.settingsController,
+  }) : super(key: key);
 
+  final SettingsController settingsController;
   static const routeName = '/';
 
   @override
@@ -81,7 +87,6 @@ class _SinglePageState extends State<SinglePage> {
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Colors.blue[400],
       extendBodyBehindAppBar: true,
       appBar: width > 1000
           ? _appBarTabDesktop()
@@ -110,24 +115,20 @@ class _SinglePageState extends State<SinglePage> {
         ? Padding(
             padding: const EdgeInsets.all(8.0),
             child: MaterialButton(
-              hoverColor: Colors.blue,
               onPressed: () => _scroll(index),
               child: Text(
                 childText,
-                style: const TextStyle(color: Colors.white),
               ),
             ),
           )
         : Padding(
             padding: const EdgeInsets.all(8.0),
             child: MaterialButton(
-                hoverColor: Colors.blue,
                 onPressed: () => _scroll(index),
                 child: Center(
                   child: ListTile(
                     leading: Icon(
                       icon,
-                      color: Colors.white,
                     ),
                     title: Text(childText),
                   ),
@@ -136,22 +137,23 @@ class _SinglePageState extends State<SinglePage> {
   }
 
   PreferredSizeWidget _appBarTabDesktop() {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+
     return AppBar(
       elevation: 0.0,
       backgroundColor: Colors.transparent,
-      title: MediaQuery.of(context).size.width < 740
+      title: width < 740
           ? const NavBarLogo()
           : NavBarLogo(
-              height: MediaQuery.of(context).size.height * 0.035,
+              height: height * 0.035,
             ),
       actions: [
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i]),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: MaterialButton(
-            color: Colors.blue,
-            hoverColor: Colors.white.withAlpha(150),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5.0),
             ),
@@ -164,6 +166,22 @@ class _SinglePageState extends State<SinglePage> {
             ),
           ),
         ),
+        Padding(
+          padding: const EdgeInsets.all(14.0),
+          child: SizedBox(
+            width: 50,
+            child: ThemeSwitch(
+                controller: widget.settingsController,
+                onChanged: (bool value) {
+                  widget.settingsController.updateThemeMode(
+                    value ? ThemeMode.light : ThemeMode.dark,
+                  );
+                }),
+          ),
+        ),
+        const SizedBox(
+          width: 24,
+        )
       ],
     );
   }

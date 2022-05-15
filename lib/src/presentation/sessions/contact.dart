@@ -42,6 +42,7 @@ class Contact extends StatelessWidget {
                 projectIconData: myContactIcons[0],
                 projectTitle: myContactTitles[0],
                 projectDescription: myContactDetails[0],
+                projectLink: myContactLinks[0],
               ),
               SizedBox(
                 width: width * 0.02,
@@ -53,6 +54,7 @@ class Contact extends StatelessWidget {
                 projectIconData: myContactIcons[1],
                 projectTitle: myContactTitles[1],
                 projectDescription: myContactDetails[1],
+                projectLink: myContactLinks[1],
               ),
               SizedBox(
                 width: width * 0.02,
@@ -64,6 +66,7 @@ class Contact extends StatelessWidget {
                 projectIconData: myContactIcons[2],
                 projectTitle: myContactTitles[2],
                 projectDescription: myContactDetails[2],
+                projectLink: myContactLinks[2],
               ),
             ],
           ),

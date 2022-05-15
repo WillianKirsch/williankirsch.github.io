@@ -48,7 +48,6 @@ class Education extends StatelessWidget {
                               Text(
                                 education.name,
                                 style: const TextStyle(
-                                  color: Colors.white,
                                   fontWeight: FontWeight.w700,
                                   fontSize: 20.0,
                                 ),
@@ -56,7 +55,6 @@ class Education extends StatelessWidget {
                               Text(
                                 education.period,
                                 style: const TextStyle(
-                                  color: Colors.white,
                                   fontWeight: FontWeight.w100,
                                   fontSize: 15.0,
                                 ),
@@ -69,7 +67,6 @@ class Education extends StatelessWidget {
                                 maxLines: 4,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  color: Colors.amber,
                                   height: 1.5,
                                 ),
                               ),
@@ -83,7 +80,6 @@ class Education extends StatelessWidget {
                                   child: Text(
                                     education.linkName,
                                     style: const TextStyle(
-                                      color: Colors.blue,
                                       decoration: TextDecoration.underline,
                                     ),
                                   ),

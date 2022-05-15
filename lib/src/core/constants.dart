@@ -91,3 +91,9 @@ final myContactDetails = [
   '+55 (47) 991240218',
   'willian.kirsch@gmail.com'
 ];
+
+final myContactLinks = [
+  'https://www.google.com/maps/place/Itapema,+SC,+88220-000/@-27.0930705,-48.6370592,14z/data=!3m1!4b1!4m5!3m4!1s0x94d8b10cf4da0413:0x231d20d09ad9775c!8m2!3d-27.0909014!4d-48.6151468',
+  'https://wa.me/5547991240218',
+  'mailto:willian.kirsch@gmail.com',
+];

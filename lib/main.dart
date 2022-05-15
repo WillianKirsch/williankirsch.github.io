@@ -45,7 +45,8 @@ class AppModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ChildRoute(SinglePage.routeName,
-            child: (context, args) => const SinglePage()),
+            child: (context, args) =>
+                SinglePage(settingsController: settingsController)),
         ChildRoute(SampleItemListView.routeName,
             child: (context, args) => const SampleItemListView()),
         ChildRoute(SettingsView.routeName,
