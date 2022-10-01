@@ -37,3 +37,15 @@ Rode o comando:
 flutter build web
 
 Em seguida, vá ate a /build/web e copie todo o conteúdo para /docs
+
+flutter build web --web-renderer html
+flutter build web --web-renderer canvaskit
+
+## TODO
+- [ ] Criar thema
+- [ ] Colocar o Liga e desliga a luz
+- [ ] Colocar a popidi
+- [ ] Colocar projetos trabalhados
+- [ ] Colocar projetos existentes com direcionamento
+- [ ] Colocar tags de tecnologias
+- [ ] Melhorar desempenho do site

@@ -14,18 +14,9 @@ class NavBarLogo extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "< ",
+            "< WK />",
             style: TextStyle(fontSize: height ?? 20),
           ),
-          Image.asset(
-            "assets/images/flutter.png",
-            height: 50,
-            width: 50,
-          ),
-          Text(
-            MediaQuery.of(context).size.width >= 1000 ? " />\t\t" : " />",
-            style: TextStyle(fontSize: height ?? 20),
-          )
         ],
       ),
     );

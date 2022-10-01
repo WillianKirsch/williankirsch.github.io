@@ -1,1 +1,0 @@
- /Users/willian.kirsch/Github/williankirsch/.dart_tool/flutter_gen/gen_l10n/app_localizations_en.dart /Users/willian.kirsch/Github/williankirsch/.dart_tool/flutter_gen/gen_l10n/app_localizations.dart:  /Users/willian.kirsch/Github/williankirsch/l10n.yaml /Users/willian.kirsch/Github/williankirsch/lib/src/localization/app_en.arb
