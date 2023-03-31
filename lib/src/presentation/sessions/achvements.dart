@@ -11,8 +11,8 @@ class Achvements extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
-    final double _cardWidth = width < 1200 ? width * 0.75 : width * 0.28;
-    final double _cardHeight = width < 1200 ? height * 0.30 : height * 0.30;
+    final double cardWidth = width < 1200 ? width * 0.75 : width * 0.28;
+    final double cardHeight = width < 1200 ? height * 0.30 : height * 0.30;
 
     return Container(
       padding: EdgeInsets.symmetric(
@@ -38,8 +38,8 @@ class Achvements extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CertificatesCard(
-                cardWidth: _cardWidth,
-                cardHeight: _cardHeight,
+                cardWidth: cardWidth,
+                cardHeight: cardHeight,
                 backImage: myCertificatesBanner[0],
                 projectTitle: myCertificatesTitles[0],
                 projectDescription: myCertificatesDescriptions[0],
@@ -51,8 +51,8 @@ class Achvements extends StatelessWidget {
                 height: height * 0.02,
               ),
               CertificatesCard(
-                cardWidth: _cardWidth,
-                cardHeight: _cardHeight,
+                cardWidth: cardWidth,
+                cardHeight: cardHeight,
                 backImage: myCertificatesBanner[1],
                 projectTitle: myCertificatesTitles[1],
                 projectDescription: myCertificatesDescriptions[1],
@@ -64,8 +64,8 @@ class Achvements extends StatelessWidget {
                 height: height * 0.02,
               ),
               CertificatesCard(
-                cardWidth: _cardWidth,
-                cardHeight: _cardHeight,
+                cardWidth: cardWidth,
+                cardHeight: cardHeight,
                 backImage: myCertificatesBanner[2],
                 projectTitle: myCertificatesTitles[2],
                 projectDescription: myCertificatesDescriptions[2],

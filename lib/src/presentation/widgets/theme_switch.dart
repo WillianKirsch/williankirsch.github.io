@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:williankirsch/src/settings/settings_controller.dart';
 
 class ThemeSwitch extends StatefulWidget {
-  final ValueChanged<bool> onChanged;
-  final SettingsController controller;
-
   const ThemeSwitch({
     Key? key,
     required this.onChanged,
     required this.controller,
   }) : super(key: key);
+
+  final ValueChanged<bool> onChanged;
+  final SettingsController controller;
 
   @override
   _ThemeSwitchState createState() => _ThemeSwitchState();
@@ -77,9 +77,9 @@ class _ThemeSwitchState extends State<ThemeSwitch>
                 child: Container(
                   width: 20.0,
                   height: 20.0,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.blue,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   child: Icon(
                     widget.controller.isLightTheme

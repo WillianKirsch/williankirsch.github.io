@@ -11,8 +11,8 @@ class Contact extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
-    final double _cardWidth = width < 1200 ? width * 0.75 : width * 0.28;
-    final double _cardHeight = width < 1200 ? height * 0.25 : height * 0.30;
+    final double cardWidth = width < 1200 ? width * 0.75 : width * 0.28;
+    final double cardHeight = width < 1200 ? height * 0.25 : height * 0.30;
 
     return Container(
       padding: EdgeInsets.symmetric(
@@ -22,7 +22,7 @@ class Contact extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "Contato",
+            'Contato',
             style: TextStyle(
               fontSize: height * 0.06,
               fontWeight: FontWeight.w100,
@@ -37,8 +37,8 @@ class Contact extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               PortfolioCard(
-                cardWidth: _cardWidth,
-                cardHeight: _cardHeight,
+                cardWidth: cardWidth,
+                cardHeight: cardHeight,
                 projectIconData: myContactIcons[0],
                 projectTitle: myContactTitles[0],
                 projectDescription: myContactDetails[0],
@@ -49,8 +49,8 @@ class Contact extends StatelessWidget {
                 height: height * 0.02,
               ),
               PortfolioCard(
-                cardWidth: _cardWidth,
-                cardHeight: _cardHeight,
+                cardWidth: cardWidth,
+                cardHeight: cardHeight,
                 projectIconData: myContactIcons[1],
                 projectTitle: myContactTitles[1],
                 projectDescription: myContactDetails[1],
@@ -61,8 +61,8 @@ class Contact extends StatelessWidget {
                 height: height * 0.02,
               ),
               PortfolioCard(
-                cardWidth: _cardWidth,
-                cardHeight: _cardHeight,
+                cardWidth: cardWidth,
+                cardHeight: cardHeight,
                 projectIconData: myContactIcons[2],
                 projectTitle: myContactTitles[2],
                 projectDescription: myContactDetails[2],

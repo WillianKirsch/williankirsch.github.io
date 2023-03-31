@@ -62,7 +62,7 @@ class _ProjectCardState extends State<PortfolioCard> {
                     BoxShadow(
                       color: Colors.blue.withAlpha(200),
                       blurRadius: 12.0,
-                      offset: Offset(2.0, 3.0),
+                      offset: const Offset(2.0, 3.0),
                     )
                   ]
                 : []),
@@ -72,19 +72,17 @@ class _ProjectCardState extends State<PortfolioCard> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                widget.projectIcon != null
-                    ? Image.asset(
-                        widget.projectIcon!,
-                        height: height * 0.1,
-                      )
-                    : Container(),
-                widget.projectIconData != null
-                    ? Icon(
-                        widget.projectIconData,
-                        color: Colors.blue,
-                        size: height * 0.1,
-                      )
-                    : Container(),
+                if (widget.projectIcon != null)
+                  Image.asset(
+                    widget.projectIcon!,
+                    height: height * 0.1,
+                  ),
+                if (widget.projectIconData != null)
+                  Icon(
+                    widget.projectIconData,
+                    color: Colors.blue,
+                    size: height * 0.1,
+                  ),
                 SizedBox(
                   height: height * 0.02,
                 ),
@@ -116,7 +114,7 @@ class _ProjectCardState extends State<PortfolioCard> {
               ],
             ),
             AnimatedOpacity(
-              duration: Duration(milliseconds: 400),
+              duration: const Duration(milliseconds: 400),
               opacity: isHover ? 0.0 : 1.0,
               child: FittedBox(
                 fit: BoxFit.fill,

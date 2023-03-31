@@ -14,7 +14,7 @@ class NavBarLogo extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "< WK />",
+            '< WK />',
             style: TextStyle(fontSize: height ?? 20),
           ),
         ],
