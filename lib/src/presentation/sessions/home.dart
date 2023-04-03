@@ -1,7 +1,9 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:williankirsch/src/core/core.dart';
 import 'package:williankirsch/src/presentation/widgets/social_media_icon.dart';
+import 'package:williankirsch/src/settings/settings_view.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -13,10 +15,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
 
-    return Container(
+    return SizedBox(
       height: height,
       width: width,
       child: Stack(
@@ -38,7 +40,7 @@ class _HomeState extends State<Home> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Image.asset(
-                      "assets/images/hi.gif",
+                      'assets/images/hi.gif',
                       height: height * 0.03,
                     ),
                   ],
@@ -47,17 +49,17 @@ class _HomeState extends State<Home> {
                   height: height * 0.01,
                 ),
                 Text(
-                  "Eu sou,",
+                  'Eu sou,',
                   style: TextStyle(
                       fontSize: height * 0.025, fontWeight: FontWeight.w200),
                 ),
                 Text(
-                  "Willian",
+                  'Willian',
                   style: TextStyle(
                       fontSize: height * 0.055, fontWeight: FontWeight.w500),
                 ),
                 Text(
-                  "Kirsch",
+                  'Kirsch',
                   style: TextStyle(
                       fontSize: height * 0.055,
                       fontWeight: FontWeight.w100,

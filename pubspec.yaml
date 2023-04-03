@@ -1,28 +1,28 @@
 name: williankirsch
-description: A new Flutter project.
+description: Site pessoal e portifólio de Willian Kirsch.
 
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'
 
-version: 1.1.0+2
+version: 1.2.0+3
 
 environment:
-  sdk: ">=2.16.2 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  flutter_modular: ^4.5.0
-  scrollable_positioned_list: ^0.2.3
-  url_launcher: ^6.1.0
-  animated_text_kit: ^4.2.1
+  flutter_modular: ^5.0.3
+  scrollable_positioned_list: ^0.3.5
+  url_launcher: ^6.1.10
+  animated_text_kit: ^4.2.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^1.0.0
+  flutter_lints: ^2.0.1
 
 flutter:
   uses-material-design: true

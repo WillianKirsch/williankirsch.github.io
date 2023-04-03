@@ -15,13 +15,15 @@ final socialIcons = [
   Images.github,
   Images.instagram,
   Images.google,
+  Images.google,
 ];
 
 const socialLinks = [
   'https://www.linkedin.com/in/williankirsch',
   'https://github.com/williankirsch',
   'https://www.instagram.com/williankirsch.dev',
-  'https://developers.google.com/profile/u/williankirsch'
+  'https://developers.google.com/profile/u/williankirsch',
+  'https://gdg.community.dev/u/mja9dx'
 ];
 
 // Tools & Tech

@@ -22,7 +22,7 @@ class Education extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            "Educação",
+            'Educação',
             style: TextStyle(
               fontSize: height * 0.055,
               fontWeight: FontWeight.w100,
@@ -34,66 +34,64 @@ class Education extends StatelessWidget {
           ),
           LayoutBuilder(
             builder: (context, constraints) {
-              return Container(
-                child: Wrap(
-                  spacing: 20.0,
-                  runSpacing: 20.0,
-                  children: getEducationList()
-                      .map(
-                        (education) => Container(
-                          width: constraints.maxWidth / 2.0 - 20.0,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                education.name,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 20.0,
-                                ),
+              return Wrap(
+                spacing: 20.0,
+                runSpacing: 20.0,
+                children: getEducationList()
+                    .map(
+                      (education) => SizedBox(
+                        width: constraints.maxWidth / 2.0 - 20.0,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              education.name,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 20.0,
                               ),
-                              Text(
-                                education.period,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w100,
-                                  fontSize: 15.0,
-                                ),
+                            ),
+                            Text(
+                              education.period,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w100,
+                                fontSize: 15.0,
                               ),
-                              const SizedBox(
-                                height: 5.0,
+                            ),
+                            const SizedBox(
+                              height: 5.0,
+                            ),
+                            Text(
+                              education.description,
+                              maxLines: 4,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                height: 1.5,
                               ),
-                              Text(
-                                education.description,
-                                maxLines: 4,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                  height: 1.5,
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 20.0,
-                              ),
-                              MouseRegion(
-                                cursor: SystemMouseCursors.click,
-                                child: InkWell(
-                                  onTap: () => goToUrl(education.linkName),
-                                  child: Text(
-                                    education.linkName,
-                                    style: const TextStyle(
-                                      decoration: TextDecoration.underline,
-                                    ),
+                            ),
+                            const SizedBox(
+                              height: 20.0,
+                            ),
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: InkWell(
+                                onTap: () => goToUrl(education.linkName),
+                                child: Text(
+                                  education.linkName,
+                                  style: const TextStyle(
+                                    decoration: TextDecoration.underline,
                                   ),
                                 ),
                               ),
-                              const SizedBox(
-                                height: 40.0,
-                              )
-                            ],
-                          ),
+                            ),
+                            const SizedBox(
+                              height: 40.0,
+                            )
+                          ],
                         ),
-                      )
-                      .toList(),
-                ),
+                      ),
+                    )
+                    .toList(),
               );
             },
           )

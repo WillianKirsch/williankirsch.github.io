@@ -14,7 +14,7 @@ class SocialMediaIconBtn extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
       child: IconButton(
-        icon: Image.network(
+        icon: Image.asset(
           icon,
         ),
         iconSize: height,

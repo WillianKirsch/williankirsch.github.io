@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:williankirsch/src/core/constants.dart';
 import 'package:williankirsch/src/settings/settings_controller.dart';
+import 'package:williankirsch/src/settings/settings_view.dart';
 
 import 'navBarLogo.dart';
 import 'sessions/about.dart';
@@ -93,9 +95,24 @@ class _SinglePageState extends State<SinglePage> {
           : AppBar(
               backgroundColor: Colors.transparent,
               elevation: 0.0,
+              actions: [
+                ThemeSwitch(
+                  controller: widget.settingsController,
+                  onChanged: (bool value) {
+                    widget.settingsController.updateThemeMode(
+                        value ? ThemeMode.light : ThemeMode.dark);
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.settings),
+                  onPressed: () {
+                    Modular.to.pushNamed(SettingsView.routeName);
+                  },
+                ),
+              ],
             ),
       drawer: MediaQuery.of(context).size.width < 1000 ? _appBarMobile() : null,
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: ScrollablePositionedList.builder(
@@ -154,6 +171,7 @@ class _SinglePageState extends State<SinglePage> {
         Padding(
           padding: const EdgeInsets.all(8),
           child: MaterialButton(
+            hoverColor: Colors.blue.withAlpha(150),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5.0),
             ),
