@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:williankirsch/src/privacidade/privacidade_page.dart';
 
 import 'src/app.dart';
-import 'src/presentation/single_page.dart';
+import 'src/site/single_page.dart';
 import 'src/sample_feature/sample_item_details_view.dart';
 import 'src/sample_feature/sample_item_list_view.dart';
 import 'src/settings/settings_controller.dart';
@@ -49,6 +50,8 @@ class AppModule extends Module {
                 SinglePage(settingsController: settingsController)),
         ChildRoute(SampleItemListView.routeName,
             child: (context, args) => const SampleItemListView()),
+        ChildRoute(PrivacidadePage.routeName,
+            child: (context, args) => const PrivacidadePage()),
         ChildRoute(SettingsView.routeName,
             child: (context, args) =>
                 SettingsView(controller: settingsController)),

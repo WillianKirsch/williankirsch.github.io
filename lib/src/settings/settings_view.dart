@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../presentation/widgets/theme_switch.dart';
+import '../site/widgets/theme_switch.dart';
 import 'settings_controller.dart';
 
 /// Displays the various settings that can be customized by the user.

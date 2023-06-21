@@ -4,10 +4,10 @@ description: Site pessoal e portifólio de Willian Kirsch.
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'
 
-version: 1.2.0+3
+version: 1.2.1+4
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: '>=3.0.1 <4.0.0'
 
 dependencies:
   flutter:
