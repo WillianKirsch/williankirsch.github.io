@@ -12,7 +12,7 @@ import 'src/settings/settings_view.dart';
 import 'src/site/single_page.dart';
 
 void main() async {
-  configureApp();
+  // configureApp();
 
   // Set up the SettingsController, which will glue user settings to multiple
   // Flutter Widgets.
