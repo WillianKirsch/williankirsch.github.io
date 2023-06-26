@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:williankirsch/src/privacidade/privacidade_page.dart';
 
+import 'configure_nonweb.dart' if (dart.library.html) 'configure_web.dart';
 import 'src/app.dart';
-import 'src/site/single_page.dart';
 import 'src/sample_feature/sample_item_details_view.dart';
 import 'src/sample_feature/sample_item_list_view.dart';
 import 'src/settings/settings_controller.dart';
 import 'src/settings/settings_service.dart';
 import 'src/settings/settings_view.dart';
+import 'src/site/single_page.dart';
 
 void main() async {
+  configureApp();
+
   // Set up the SettingsController, which will glue user settings to multiple
   // Flutter Widgets.
   final settingsController = SettingsController(SettingsService());

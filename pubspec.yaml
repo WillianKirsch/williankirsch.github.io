@@ -13,6 +13,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_web_plugins:
+    sdk: flutter
+
   flutter_modular: ^5.0.3
   scrollable_positioned_list: ^0.3.5
   url_launcher: ^6.1.10
@@ -31,6 +34,7 @@ flutter:
   # generate: true
 
   assets:
+    - assets/app-ads.txt
     # Add assets from the images directory to the application.
     - assets/images/
     - assets/terceiros/
