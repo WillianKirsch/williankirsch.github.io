@@ -48,21 +48,20 @@ class AppModule extends Module {
   final SettingsController settingsController;
 
   @override
-  List<Bind> get binds => [];
+  void binds(Injector i) => [];
 
   @override
-  List<ModularRoute> get routes => [
-        ChildRoute(SinglePage.routeName,
-            child: (context, args) =>
+  void routes(RouteManager r) => [
+        r.child(SinglePage.routeName,
+            child: (context) =>
                 SinglePage(settingsController: settingsController)),
-        ChildRoute(SampleItemListView.routeName,
-            child: (context, args) => const SampleItemListView()),
-        ChildRoute(PrivacidadePage.routeName,
-            child: (context, args) => const PrivacidadePage()),
-        ChildRoute(SettingsView.routeName,
-            child: (context, args) =>
-                SettingsView(controller: settingsController)),
-        ChildRoute(SampleItemDetailsView.routeName,
-            child: (context, args) => const SampleItemDetailsView()),
+        r.child(SampleItemListView.routeName,
+            child: (context) => const SampleItemListView()),
+        r.child(PrivacidadePage.routeName,
+            child: (context) => const PrivacidadePage()),
+        r.child(SettingsView.routeName,
+            child: (context) => SettingsView(controller: settingsController)),
+        r.child(SampleItemDetailsView.routeName,
+            child: (context) => const SampleItemDetailsView()),
       ];
 }

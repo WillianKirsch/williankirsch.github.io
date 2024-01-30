@@ -36,9 +36,7 @@ class AppWidget extends StatelessWidget {
           theme: lightTheme,
           darkTheme: darkTheme,
           themeMode: settingsController.themeMode,
-
-          routeInformationParser: Modular.routeInformationParser,
-          routerDelegate: Modular.routerDelegate,
+          routerConfig: Modular.routerConfig,
         );
       },
     );
