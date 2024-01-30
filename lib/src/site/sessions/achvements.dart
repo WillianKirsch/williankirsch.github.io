@@ -19,7 +19,7 @@ class Achvements extends StatelessWidget {
         horizontal: width * 0.04,
         vertical: height * 0.04,
       ),
-      color: Colors.grey[900],
+      color: Theme.of(context).colorScheme.background,
       child: Column(
         children: [
           Text(
@@ -77,11 +77,22 @@ class Achvements extends StatelessWidget {
           SizedBox(
             height: height * 0.02,
           ),
+          ElevatedButton(
+              onPressed: () {
+                goToUrl(
+                    'https://drive.google.com/drive/folders/0BzzA1Bzcgvz9NUoxbzNpQ21Kblk?resourcekey=0-u_bby4CvUvFFCIfs3w09fg&usp=sharing');
+              },
+              child: const Text(
+                'Veja mais',
+                style: TextStyle(
+                  fontWeight: FontWeight.w200,
+                ),
+              )),
           MaterialButton(
-            hoverColor: Colors.blue.withAlpha(150),
+            hoverColor: Theme.of(context).colorScheme.secondary,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0),
-                side: const BorderSide(color: Colors.blue)),
+                side: BorderSide(color: Theme.of(context).colorScheme.primary)),
             onPressed: () {
               goToUrl(
                   'https://drive.google.com/drive/folders/0BzzA1Bzcgvz9NUoxbzNpQ21Kblk?resourcekey=0-u_bby4CvUvFFCIfs3w09fg&usp=sharing');

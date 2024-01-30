@@ -1,4 +1,4 @@
-import 'package:url_launcher/url_launcher.dart';
+import 'package:turttle/core.dart';
 
 export './constants.dart';
 export './images.dart';

@@ -22,7 +22,7 @@ class CertificatesCard extends StatefulWidget {
   final Widget? bottomWidget;
 
   @override
-  _CertificatesCardState createState() => _CertificatesCardState();
+  State<CertificatesCard> createState() => _CertificatesCardState();
 }
 
 class _CertificatesCardState extends State<CertificatesCard> {
@@ -49,12 +49,12 @@ class _CertificatesCardState extends State<CertificatesCard> {
         width: widget.cardWidth,
         height: widget.cardHeight,
         decoration: BoxDecoration(
-            color: Colors.grey[900],
+            color: Theme.of(context).colorScheme.secondary,
             borderRadius: BorderRadius.circular(8.0),
             boxShadow: isHover
                 ? [
                     BoxShadow(
-                      color: Colors.blue.withAlpha(200),
+                      color: Theme.of(context).colorScheme.onSecondary,
                       blurRadius: 12.0,
                       offset: const Offset(2.0, 3.0),
                     )

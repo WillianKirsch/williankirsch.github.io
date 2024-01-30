@@ -19,7 +19,7 @@ class About extends StatelessWidget {
             horizontal: width * 0.04,
             vertical: height * 0.04,
           ),
-          color: Colors.grey[900],
+          color: Theme.of(context).colorScheme.background,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -34,9 +34,9 @@ class About extends StatelessWidget {
               SizedBox(
                 height: height * 0.05,
               ),
-              Row(
+              const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Expanded(
                     flex: 3,
                     child: Text(
@@ -45,7 +45,6 @@ class About extends StatelessWidget {
                         fontSize: 14,
                         letterSpacing: 1.0,
                         height: 2.0,
-                        color: Colors.white,
                       ),
                     ),
                   ),

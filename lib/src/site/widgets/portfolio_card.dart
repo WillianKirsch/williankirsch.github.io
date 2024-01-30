@@ -26,7 +26,7 @@ class PortfolioCard extends StatefulWidget {
   final Widget? bottomWidget;
 
   @override
-  _ProjectCardState createState() => _ProjectCardState();
+  State<PortfolioCard> createState() => _ProjectCardState();
 }
 
 class _ProjectCardState extends State<PortfolioCard> {
@@ -55,12 +55,12 @@ class _ProjectCardState extends State<PortfolioCard> {
         width: widget.cardWidth,
         height: widget.cardHeight,
         decoration: BoxDecoration(
-            color: Colors.grey[900],
+            color: Theme.of(context).colorScheme.primaryContainer,
             borderRadius: BorderRadius.circular(8.0),
             boxShadow: isHover
                 ? [
                     BoxShadow(
-                      color: Colors.blue.withAlpha(200),
+                      color: Theme.of(context).colorScheme.onPrimary,
                       blurRadius: 12.0,
                       offset: const Offset(2.0, 3.0),
                     )
@@ -80,7 +80,7 @@ class _ProjectCardState extends State<PortfolioCard> {
                 if (widget.projectIconData != null)
                   Icon(
                     widget.projectIconData,
-                    color: Colors.blue,
+                    color: Theme.of(context).colorScheme.primary,
                     size: height * 0.1,
                   ),
                 SizedBox(
@@ -90,10 +90,10 @@ class _ProjectCardState extends State<PortfolioCard> {
                   widget.projectTitle,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: height * 0.02,
-                    letterSpacing: 1.5,
-                    fontWeight: FontWeight.w400,
-                  ),
+                      fontSize: height * 0.02,
+                      letterSpacing: 1.5,
+                      fontWeight: FontWeight.w400,
+                      color: Theme.of(context).colorScheme.primary),
                 ),
                 SizedBox(
                   height: height * 0.01,
@@ -105,7 +105,8 @@ class _ProjectCardState extends State<PortfolioCard> {
                       fontSize: height * 0.015,
                       letterSpacing: 2.0,
                       fontWeight: FontWeight.w100,
-                      height: width >= 600 ? 2.0 : 1.5),
+                      height: width >= 600 ? 2.0 : 1.5,
+                      color: Theme.of(context).colorScheme.primary),
                 ),
                 SizedBox(
                   height: height * 0.01,

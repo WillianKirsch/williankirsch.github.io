@@ -1,15 +1,15 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:purple_ds/purple_design_system.dart';
 import 'package:williankirsch/src/core/core.dart';
 import 'package:williankirsch/src/site/widgets/social_media_icon.dart';
-import 'package:williankirsch/src/settings/settings_view.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
-  _HomeState createState() => _HomeState();
+  State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
@@ -18,17 +18,29 @@ class _HomeState extends State<Home> {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
 
-    return SizedBox(
+    return Container(
+      color: Theme.of(context).primaryColor,
       height: height,
       width: width,
       child: Stack(
         children: [
+          SvgPicture.asset(
+            'assets/images/background.svg',
+            alignment: Alignment.bottomRight,
+            width: MediaQuery.of(context).size.width,
+            colorFilter: const ColorFilter.mode(
+              PurpleColors.backgroundInverse,
+              BlendMode.modulate,
+            ),
+          ),
           Positioned.fill(
-            top: width < 1200 ? height * 0.50 : height * 0.1,
+            //top: width < 1200 ? height * 0.50 : height * 0.1,
+
             right: width < 1200 ? 0 : width * 0.05,
             child: Align(
-              alignment: width < 1200 ? Alignment.center : Alignment.topRight,
-              child: Image.asset(Images.profile, height: height * 0.65),
+              alignment:
+                  width < 1200 ? Alignment.center : Alignment.bottomRight,
+              child: Image.asset(Images.profile, height: height * 0.90),
             ),
           ),
           Container(
@@ -51,31 +63,39 @@ class _HomeState extends State<Home> {
                 Text(
                   'Eu sou,',
                   style: TextStyle(
-                      fontSize: height * 0.025, fontWeight: FontWeight.w200),
+                    fontSize: height * 0.025,
+                    fontWeight: FontWeight.w200,
+                    color: PurpleColors.lightest,
+                  ),
                 ),
                 Text(
                   'Willian',
                   style: TextStyle(
-                      fontSize: height * 0.055, fontWeight: FontWeight.w500),
+                    fontSize: height * 0.055,
+                    fontWeight: FontWeight.w500,
+                    color: PurpleColors.lightest,
+                  ),
                 ),
                 Text(
                   'Kirsch',
                   style: TextStyle(
-                      fontSize: height * 0.055,
-                      fontWeight: FontWeight.w100,
-                      letterSpacing: 1.1),
+                    fontSize: height * 0.055,
+                    fontWeight: FontWeight.w100,
+                    letterSpacing: 1.1,
+                    color: PurpleColors.lightest,
+                  ),
                 ),
                 Row(
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.play_arrow_rounded,
-                      color: Colors.blue,
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
                     DefaultTextStyle(
                       style: TextStyle(
-                        fontSize: height * 0.02,
+                        fontSize: height * 0.050,
                         fontWeight: FontWeight.w200,
-                        color: Colors.white,
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                       child: AnimatedTextKit(
                           isRepeatingAnimation: true,

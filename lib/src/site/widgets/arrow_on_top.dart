@@ -6,7 +6,7 @@ class ArrowOnTop extends StatefulWidget {
   final VoidCallback? onPressed;
 
   @override
-  _ArrowOnTopState createState() => _ArrowOnTopState();
+  State<ArrowOnTop> createState() => _ArrowOnTopState();
 }
 
 class _ArrowOnTopState extends State<ArrowOnTop> {
@@ -31,7 +31,7 @@ class _ArrowOnTopState extends State<ArrowOnTop> {
           },
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.grey[900],
+              color: Theme.of(context).colorScheme.secondary,
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(8.0),
                 bottomLeft: Radius.circular(8.0),
@@ -39,7 +39,7 @@ class _ArrowOnTopState extends State<ArrowOnTop> {
               boxShadow: isHover
                   ? [
                       BoxShadow(
-                        color: Colors.blue.withAlpha(200),
+                        color: Theme.of(context).colorScheme.primary,
                         blurRadius: 12.0,
                         offset: const Offset(2.0, 3.0),
                       )
@@ -48,7 +48,7 @@ class _ArrowOnTopState extends State<ArrowOnTop> {
             ),
             child: Icon(
               Icons.arrow_drop_up_outlined,
-              color: Colors.blue,
+              color: Theme.of(context).colorScheme.onSecondary,
               size: MediaQuery.of(context).size.height * 0.05,
             ),
           ),

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../site/widgets/theme_switch.dart';
-import 'settings_controller.dart';
+import 'package:turttle/settings.dart';
 
 /// Displays the various settings that can be customized by the user.
 ///
@@ -18,17 +16,15 @@ class SettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: const Text('Configurações'),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16),
-            // Glue the SettingsController to the theme selection DropdownButton.
-            //
-            // When a user selects a theme from the dropdown list, the
-            // SettingsController is updated, which rebuilds the MaterialApp.
-            child: DropdownButton<ThemeMode>(
+      body: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            DropdownButton<ThemeMode>(
               // Read the selected themeMode from the controller
               value: controller.themeMode,
               // Call the updateThemeMode method any time the user selects a theme.
@@ -48,15 +44,15 @@ class SettingsView extends StatelessWidget {
                 )
               ],
             ),
-          ),
-          ThemeSwitch(
-            controller: controller,
-            onChanged: (bool value) {
-              controller
-                  .updateThemeMode(value ? ThemeMode.light : ThemeMode.dark);
-            },
-          ),
-        ],
+            // ThemeSwitch(
+            //   isLightTheme: controller.isLightTheme,
+            //   onChanged: (bool value) {
+            //     controller
+            //         .updateThemeMode(value ? ThemeMode.light : ThemeMode.dark);
+            //   },
+            // ),
+          ],
+        ),
       ),
     );
   }

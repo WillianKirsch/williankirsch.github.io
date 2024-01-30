@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:turttle/core.dart';
+import 'package:turttle/settings.dart';
 import 'package:williankirsch/src/privacidade/privacidade_page.dart';
 
-import 'configure_nonweb.dart' if (dart.library.html) 'configure_web.dart';
 import 'src/app.dart';
 import 'src/sample_feature/sample_item_details_view.dart';
 import 'src/sample_feature/sample_item_list_view.dart';
-import 'src/settings/settings_controller.dart';
+
 import 'src/settings/settings_service.dart';
 import 'src/settings/settings_view.dart';
 import 'src/site/single_page.dart';
@@ -16,7 +16,11 @@ void main() async {
 
   // Set up the SettingsController, which will glue user settings to multiple
   // Flutter Widgets.
-  final settingsController = SettingsController(SettingsService());
+  final settingsController = SettingsController(
+    settingsService: SettingsServiceImpl(),
+    firebaseOptions: null,
+    useMobAds: false,
+  );
 
   // Load the user's preferred theme while the splash screen is displayed.
   // This prevents a sudden theme change when the app is first displayed.

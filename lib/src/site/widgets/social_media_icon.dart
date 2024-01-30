@@ -16,12 +16,13 @@ class SocialMediaIconBtn extends StatelessWidget {
       child: IconButton(
         icon: Image.asset(
           icon,
+          height: height,
         ),
         iconSize: height,
         onPressed: () => goToUrl(
           socialLink,
         ),
-        hoverColor: Colors.blue,
+        hoverColor: Theme.of(context).colorScheme.secondary,
       ),
     );
   }

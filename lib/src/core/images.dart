@@ -1,7 +1,7 @@
 class Images {
   static String get hi => 'assets/images/hi.gif';
 
-  static String get profile => 'assets/images/Kirsch.jpg';
+  static String get profile => 'assets/images/WillianKirsch.png';
 
   static String get github => 'assets/images/github.png';
   static String get instagram => 'assets/images/instagram.png';

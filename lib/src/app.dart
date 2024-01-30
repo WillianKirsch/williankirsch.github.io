@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-
-import 'settings/settings_controller.dart';
-import 'settings/themes.dart';
+import 'package:purple_ds/purple_design_system.dart';
+import 'package:turttle/core.dart';
+import 'package:turttle/settings.dart';
 
 /// The Widget that configures your application.
 class AppWidget extends StatelessWidget {
@@ -34,8 +33,8 @@ class AppWidget extends StatelessWidget {
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
-          theme: themeData,
-          darkTheme: themeDataDark,
+          theme: lightTheme,
+          darkTheme: darkTheme,
           themeMode: settingsController.themeMode,
 
           routeInformationParser: Modular.routeInformationParser,

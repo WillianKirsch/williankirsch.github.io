@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:purple_ds/purple_design_system.dart';
+import 'package:purple_ds/purple_widgets.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:turttle/core.dart';
+import 'package:turttle/settings.dart';
+
 import 'package:williankirsch/src/core/constants.dart';
-import 'package:williankirsch/src/settings/settings_controller.dart';
 import 'package:williankirsch/src/settings/settings_view.dart';
 
-import 'navBarLogo.dart';
+import 'nav_bar_logo.dart';
 import 'sessions/about.dart';
 import 'sessions/achvements.dart';
 import 'sessions/contact.dart';
@@ -14,7 +16,6 @@ import 'sessions/education.dart';
 import 'sessions/home.dart';
 import 'widgets/arrow_on_top.dart';
 import 'widgets/footer.dart';
-import 'widgets/theme_switch.dart';
 
 class SinglePage extends StatefulWidget {
   const SinglePage({
@@ -85,7 +86,6 @@ class _SinglePageState extends State<SinglePage> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
@@ -93,12 +93,12 @@ class _SinglePageState extends State<SinglePage> {
       appBar: width > 1000
           ? _appBarTabDesktop()
           : AppBar(
-              backgroundColor: Colors.transparent,
+              iconTheme: const IconThemeData(color: PurpleColors.lightest),
+              backgroundColor: Theme.of(context).primaryColor,
               elevation: 0.0,
               actions: [
-                ThemeSwitch(
-                  controller: widget.settingsController,
-                  onChanged: (bool value) {
+                ThemeButton(
+                  handleBrightnessChange: (bool value) {
                     widget.settingsController.updateThemeMode(
                         value ? ThemeMode.light : ThemeMode.dark);
                   },
@@ -135,6 +135,7 @@ class _SinglePageState extends State<SinglePage> {
               onPressed: () => _scroll(index),
               child: Text(
                 childText,
+                style: const TextStyle(color: PurpleColors.lightest),
               ),
             ),
           )
@@ -146,8 +147,13 @@ class _SinglePageState extends State<SinglePage> {
                   child: ListTile(
                     leading: Icon(
                       icon,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
-                    title: Text(childText),
+                    title: Text(
+                      childText,
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.inversePrimary),
+                    ),
                   ),
                 )),
           );
@@ -159,11 +165,13 @@ class _SinglePageState extends State<SinglePage> {
 
     return AppBar(
       elevation: 0.0,
-      backgroundColor: Colors.transparent,
+      backgroundColor: Theme.of(context).primaryColor,
       title: width < 740
-          ? const NavBarLogo()
-          : NavBarLogo(
+          ? NavBarLogo(
               height: height * 0.035,
+            )
+          : NavBarLogo(
+              height: height * 0.055,
             ),
       actions: [
         for (int i = 0; i < _sectionsName.length; i++)
@@ -171,15 +179,17 @@ class _SinglePageState extends State<SinglePage> {
         Padding(
           padding: const EdgeInsets.all(8),
           child: MaterialButton(
-            hoverColor: Colors.blue.withAlpha(150),
+            color: Theme.of(context).colorScheme.secondary,
+            hoverColor: Theme.of(context).colorScheme.tertiary,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5.0),
             ),
             onPressed: _getResume,
-            child: const Text(
+            child: Text(
               'Currículo',
               style: TextStyle(
                 fontWeight: FontWeight.w200,
+                color: Theme.of(context).colorScheme.onSecondary,
               ),
             ),
           ),
@@ -188,13 +198,18 @@ class _SinglePageState extends State<SinglePage> {
           padding: const EdgeInsets.all(14.0),
           child: SizedBox(
             width: 50,
-            child: ThemeSwitch(
-                controller: widget.settingsController,
-                onChanged: (bool value) {
+            child: Theme(
+              data: Theme.of(context).copyWith(
+                iconTheme: IconThemeData(
+                    color: Theme.of(context).colorScheme.onSecondary),
+              ),
+              child: ThemeButton(
+                handleBrightnessChange: (bool value) {
                   widget.settingsController.updateThemeMode(
-                    value ? ThemeMode.light : ThemeMode.dark,
-                  );
-                }),
+                      value ? ThemeMode.light : ThemeMode.dark);
+                },
+              ),
+            ),
           ),
         ),
         const SizedBox(
@@ -204,7 +219,7 @@ class _SinglePageState extends State<SinglePage> {
     );
   }
 
-  void _getResume() async {
+  Future<void> _getResume() async {
     await launchUrl(
       resume,
       mode: LaunchMode.inAppWebView,
@@ -230,20 +245,23 @@ class _SinglePageState extends State<SinglePage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: Colors.blue.withAlpha(150),
+                  color: Theme.of(context).colorScheme.secondary,
+                  hoverColor: Theme.of(context).colorScheme.tertiary,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0),
-                      side: const BorderSide(color: Colors.blue)),
+                      side: BorderSide(
+                          color: Theme.of(context).colorScheme.secondary)),
                   onPressed: _getResume,
-                  child: const ListTile(
+                  child: ListTile(
                     leading: Icon(
                       Icons.book,
-                      color: Colors.red,
+                      color: Theme.of(context).colorScheme.onSecondary,
                     ),
                     title: Text(
                       'Currículo',
                       style: TextStyle(
                         fontWeight: FontWeight.w200,
+                        color: Theme.of(context).colorScheme.onSecondary,
                       ),
                     ),
                   ),
