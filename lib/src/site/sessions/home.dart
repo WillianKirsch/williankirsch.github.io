@@ -27,14 +27,10 @@ class _HomeState extends State<Home> {
       child: Stack(
         children: [
           SafeArea(
-            child: SvgPicture.asset(
-              'assets/images/background.svg',
-              alignment: Alignment.bottomRight,
+            child: Image.asset(
+              'assets/images/background.png',
               width: MediaQuery.of(context).size.width,
-              colorFilter: const ColorFilter.mode(
-                PurpleColors.backgroundInverse,
-                BlendMode.modulate,
-              ),
+              alignment: Alignment.bottomRight,
             ),
           ),
           Positioned.fill(
@@ -99,7 +95,7 @@ class _HomeState extends State<Home> {
                         fontSize:
                             width < 1200 ? height * 0.030 : height * 0.050,
                         fontWeight: FontWeight.w200,
-                        color: Theme.of(context).colorScheme.secondary,
+                        color: PurpleColors.lightest,
                       ),
                       child: AnimatedTextKit(
                           isRepeatingAnimation: true,
