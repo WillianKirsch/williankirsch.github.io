@@ -3,12 +3,12 @@ import 'package:williankirsch/src/core/core.dart';
 
 class SocialMediaIconBtn extends StatelessWidget {
   const SocialMediaIconBtn({
-    Key? key,
+    super.key,
     required this.icon,
     required this.socialLink,
     required this.height,
     required this.horizontalPadding,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -3,7 +3,7 @@ import 'package:williankirsch/src/core/core.dart';
 
 class CertificatesCard extends StatefulWidget {
   const CertificatesCard({
-    Key? key,
+    super.key,
     this.backImage,
     this.bottomWidget,
     required this.projectTitle,
@@ -11,7 +11,7 @@ class CertificatesCard extends StatefulWidget {
     required this.projectLink,
     this.cardWidth,
     this.cardHeight,
-  }) : super(key: key);
+  });
 
   final String projectTitle;
   final String projectDescription;
@@ -32,6 +32,7 @@ class _CertificatesCardState extends State<CertificatesCard> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+    final borderRadius = BorderRadius.circular(8.0);
     return InkWell(
       onTap: () => goToUrl(widget.projectLink),
       onHover: (isHovering) {
@@ -50,7 +51,7 @@ class _CertificatesCardState extends State<CertificatesCard> {
         height: widget.cardHeight,
         decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.secondary,
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: borderRadius,
             boxShadow: isHover
                 ? [
                     BoxShadow(
@@ -99,12 +100,17 @@ class _CertificatesCardState extends State<CertificatesCard> {
             AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
               opacity: isHover ? 0.0 : 1.0,
-              child: FittedBox(
-                fit: BoxFit.fitHeight,
-                child: widget.backImage != null
-                    ? Image.asset(widget.backImage!)
-                    : Container(),
-              ),
+              child: widget.backImage != null
+                  ? ClipRRect(
+                      borderRadius: borderRadius,
+                      child: Image.asset(
+                        widget.backImage!,
+                        height: widget.cardHeight,
+                        width: widget.cardWidth,
+                        fit: BoxFit.fitWidth,
+                      ),
+                    )
+                  : const SizedBox.shrink(),
             ),
           ],
         ),

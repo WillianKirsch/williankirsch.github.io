@@ -3,7 +3,7 @@ import 'package:williankirsch/src/core/core.dart';
 
 class PortfolioCard extends StatefulWidget {
   const PortfolioCard({
-    Key? key,
+    super.key,
     this.projectIcon,
     required this.projectTitle,
     required this.projectDescription,
@@ -13,7 +13,7 @@ class PortfolioCard extends StatefulWidget {
     this.bottomWidget,
     this.cardWidth,
     this.cardHeight,
-  }) : super(key: key);
+  });
 
   final String? projectIcon;
   final IconData? projectIconData;

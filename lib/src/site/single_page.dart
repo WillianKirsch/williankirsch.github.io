@@ -19,9 +19,9 @@ import 'widgets/footer.dart';
 
 class SinglePage extends StatefulWidget {
   const SinglePage({
-    Key? key,
+    super.key,
     required this.settingsController,
-  }) : super(key: key);
+  });
 
   final SettingsController settingsController;
   static const routeName = '/';

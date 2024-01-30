@@ -6,7 +6,9 @@ import 'package:williankirsch/src/core/core.dart';
 import 'package:williankirsch/src/site/widgets/social_media_icon.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({
+    super.key,
+  });
 
   @override
   State<Home> createState() => _HomeState();
@@ -24,18 +26,19 @@ class _HomeState extends State<Home> {
       width: width,
       child: Stack(
         children: [
-          SvgPicture.asset(
-            'assets/images/background.svg',
-            alignment: Alignment.bottomRight,
-            width: MediaQuery.of(context).size.width,
-            colorFilter: const ColorFilter.mode(
-              PurpleColors.backgroundInverse,
-              BlendMode.modulate,
+          SafeArea(
+            child: SvgPicture.asset(
+              'assets/images/background.svg',
+              alignment: Alignment.bottomRight,
+              width: MediaQuery.of(context).size.width,
+              colorFilter: const ColorFilter.mode(
+                PurpleColors.backgroundInverse,
+                BlendMode.modulate,
+              ),
             ),
           ),
           Positioned.fill(
-            //top: width < 1200 ? height * 0.50 : height * 0.1,
-
+            top: width < 1200 ? height * 0.46 : 0,
             right: width < 1200 ? 0 : width * 0.05,
             child: Align(
               alignment:
@@ -93,7 +96,8 @@ class _HomeState extends State<Home> {
                     ),
                     DefaultTextStyle(
                       style: TextStyle(
-                        fontSize: height * 0.050,
+                        fontSize:
+                            width < 1200 ? height * 0.030 : height * 0.050,
                         fontWeight: FontWeight.w200,
                         color: Theme.of(context).colorScheme.secondary,
                       ),

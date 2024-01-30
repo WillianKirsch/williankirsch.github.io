@@ -5,8 +5,8 @@ import '../models/privacidade_model.dart';
 /// Displays a list of SampleItems.
 class PrivacidadePage extends StatelessWidget {
   const PrivacidadePage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static const routeName = '/privacidade';
 

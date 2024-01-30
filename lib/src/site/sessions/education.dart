@@ -3,7 +3,9 @@ import 'package:williankirsch/src/core/core.dart';
 import 'package:williankirsch/src/models/education_model.dart';
 
 class Education extends StatelessWidget {
-  Education({Key? key}) : super(key: key);
+  Education({
+    super.key,
+  });
 
   bool isHover = false;
 

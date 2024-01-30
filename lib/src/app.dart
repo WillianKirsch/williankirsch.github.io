@@ -6,9 +6,9 @@ import 'package:turttle/settings.dart';
 /// The Widget that configures your application.
 class AppWidget extends StatelessWidget {
   const AppWidget({
-    Key? key,
+    super.key,
     required this.settingsController,
-  }) : super(key: key);
+  });
 
   final SettingsController settingsController;
 

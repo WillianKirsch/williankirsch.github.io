@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ArrowOnTop extends StatefulWidget {
-  const ArrowOnTop({Key? key, this.onPressed}) : super(key: key);
+  const ArrowOnTop({super.key, this.onPressed});
 
   final VoidCallback? onPressed;
 

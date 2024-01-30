@@ -4,7 +4,9 @@ import 'package:williankirsch/src/core/core.dart';
 import '../widgets/portfolio_card.dart';
 
 class Contact extends StatelessWidget {
-  const Contact({Key? key}) : super(key: key);
+  const Contact({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

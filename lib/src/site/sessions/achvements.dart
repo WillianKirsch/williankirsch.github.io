@@ -4,7 +4,7 @@ import 'package:williankirsch/src/core/core.dart';
 import '../widgets/certificates_card.dart';
 
 class Achvements extends StatelessWidget {
-  const Achvements({Key? key}) : super(key: key);
+  const Achvements({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -78,21 +78,6 @@ class Achvements extends StatelessWidget {
             height: height * 0.02,
           ),
           ElevatedButton(
-              onPressed: () {
-                goToUrl(
-                    'https://drive.google.com/drive/folders/0BzzA1Bzcgvz9NUoxbzNpQ21Kblk?resourcekey=0-u_bby4CvUvFFCIfs3w09fg&usp=sharing');
-              },
-              child: const Text(
-                'Veja mais',
-                style: TextStyle(
-                  fontWeight: FontWeight.w200,
-                ),
-              )),
-          MaterialButton(
-            hoverColor: Theme.of(context).colorScheme.secondary,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5.0),
-                side: BorderSide(color: Theme.of(context).colorScheme.primary)),
             onPressed: () {
               goToUrl(
                   'https://drive.google.com/drive/folders/0BzzA1Bzcgvz9NUoxbzNpQ21Kblk?resourcekey=0-u_bby4CvUvFFCIfs3w09fg&usp=sharing');
