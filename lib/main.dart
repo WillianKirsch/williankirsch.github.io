@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:turttle/core.dart';
+import 'package:turttle/pages.dart';
 import 'package:turttle/settings.dart';
 import 'package:williankirsch/src/privacidade/privacidade_page.dart';
 
@@ -8,7 +9,6 @@ import 'src/sample_feature/sample_item_details_view.dart';
 import 'src/sample_feature/sample_item_list_view.dart';
 
 import 'src/settings/settings_service.dart';
-import 'src/settings/settings_view.dart';
 import 'src/site/single_page.dart';
 
 void main() async {
@@ -19,7 +19,6 @@ void main() async {
   final settingsController = SettingsController(
     settingsService: SettingsServiceImpl(),
     firebaseOptions: null,
-    useMobAds: false,
   );
 
   // Load the user's preferred theme while the splash screen is displayed.
@@ -59,8 +58,9 @@ class AppModule extends Module {
             child: (context) => const SampleItemListView()),
         r.child(PrivacidadePage.routeName,
             child: (context) => const PrivacidadePage()),
-        r.child(SettingsView.routeName,
-            child: (context) => SettingsView(controller: settingsController)),
+        r.child(SettingsPage.routeName,
+            child: (context) =>
+                SettingsPage(settingsController: settingsController)),
         r.child(SampleItemDetailsView.routeName,
             child: (context) => const SampleItemDetailsView()),
       ];

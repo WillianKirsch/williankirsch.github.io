@@ -42,3 +42,13 @@ flutter:
     # Add assets from the images directory to the application.
     - assets/images/
     - assets/terceiros/
+
+  fonts:
+    - family: AnekLatin
+      fonts:
+        - asset: packages/purple_ds/fonts/AnekLatin-Regular.ttf
+          weight: 400
+        - asset: packages/purple_ds/fonts/AnekLatin-Medium.ttf
+          weight: 500
+        - asset: packages/purple_ds/fonts/AnekLatin-Bold.ttf
+          weight: 700

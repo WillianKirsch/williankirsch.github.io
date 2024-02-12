@@ -3,10 +3,10 @@ import 'package:purple_ds/purple_design_system.dart';
 import 'package:purple_ds/purple_widgets.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:turttle/core.dart';
+import 'package:turttle/pages.dart';
 import 'package:turttle/settings.dart';
 
 import 'package:williankirsch/src/core/constants.dart';
-import 'package:williankirsch/src/settings/settings_view.dart';
 
 import 'nav_bar_logo.dart';
 import 'sessions/about.dart';
@@ -97,7 +97,7 @@ class _SinglePageState extends State<SinglePage> {
               backgroundColor: Theme.of(context).primaryColor,
               elevation: 0.0,
               actions: [
-                ThemeButton(
+                BrightnessButton(
                   handleBrightnessChange: (bool value) {
                     widget.settingsController.updateThemeMode(
                         value ? ThemeMode.light : ThemeMode.dark);
@@ -106,7 +106,7 @@ class _SinglePageState extends State<SinglePage> {
                 IconButton(
                   icon: const Icon(Icons.settings),
                   onPressed: () {
-                    Modular.to.pushNamed(SettingsView.routeName);
+                    Modular.to.pushNamed(SettingsPage.routeName);
                   },
                 ),
               ],
@@ -195,7 +195,7 @@ class _SinglePageState extends State<SinglePage> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(14.0),
+          padding: const EdgeInsets.symmetric(horizontal: 14),
           child: SizedBox(
             width: 50,
             child: Theme(
@@ -203,11 +203,12 @@ class _SinglePageState extends State<SinglePage> {
                 iconTheme: IconThemeData(
                     color: Theme.of(context).colorScheme.onSecondary),
               ),
-              child: ThemeButton(
+              child: BrightnessButton(
                 handleBrightnessChange: (bool value) {
                   widget.settingsController.updateThemeMode(
                       value ? ThemeMode.light : ThemeMode.dark);
                 },
+                showTooltipBelow: true,
               ),
             ),
           ),

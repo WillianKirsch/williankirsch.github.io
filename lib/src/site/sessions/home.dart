@@ -1,6 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:purple_ds/purple_design_system.dart';
+import 'package:turttle/core.dart';
+import 'package:turttle/pages.dart';
 import 'package:williankirsch/src/core/core.dart';
 import 'package:williankirsch/src/site/widgets/social_media_icon.dart';
 
@@ -49,9 +51,13 @@ class _HomeState extends State<Home> {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Image.asset(
-                      'assets/images/hi.gif',
-                      height: height * 0.03,
+                    GestureDetector(
+                      onLongPress: () =>
+                          Modular.to.pushNamed(SettingsPage.routeName),
+                      child: Image.asset(
+                        'assets/images/hi.gif',
+                        height: height * 0.03,
+                      ),
                     ),
                   ],
                 ),

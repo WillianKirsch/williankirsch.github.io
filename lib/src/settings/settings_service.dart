@@ -9,7 +9,7 @@ import 'package:turttle/settings.dart';
 class SettingsServiceImpl implements SettingsService {
   /// Loads the User's preferred ThemeMode from local or remote storage.
   @override
-  Future<ThemeMode> themeMode() async => ThemeMode.light;
+  Future<ThemeMode> themeMode() async => ThemeMode.system;
 
   /// Persists the user's preferred ThemeMode to local or remote storage.
   @override
@@ -20,4 +20,12 @@ class SettingsServiceImpl implements SettingsService {
 
   @override
   Future hiveOpenBoxes() async {}
+
+  @override
+  Future<Color?> themeColorSeed() async {
+    return null;
+  }
+
+  @override
+  Future updateColorSeed(Color? color) async {}
 }
