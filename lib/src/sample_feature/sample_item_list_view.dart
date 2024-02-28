@@ -27,7 +27,7 @@ class SampleItemListView extends StatelessWidget {
               // Navigate to the settings page. If the user leaves and returns
               // to the app after it has been killed while running in the
               // background, the navigation stack is restored.
-              Modular.to.pushNamed(SettingsPage.routeName);
+              GoRouter.of(context).go(SettingsPage.routeName);
             },
           ),
         ],
@@ -55,7 +55,7 @@ class SampleItemListView extends StatelessWidget {
                 foregroundImage: AssetImage('assets/images/flutter_logo.png'),
               ),
               onTap: () {
-                Modular.to.pushNamed(
+                GoRouter.of(context).go(
                   SampleItemDetailsView.routeName,
                 );
               });

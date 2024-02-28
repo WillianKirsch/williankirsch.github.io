@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:turttle/core.dart';
+import 'package:turttle/pages.dart';
 import 'package:turttle/settings.dart';
+
+import 'privacidade/privacidade_page.dart';
+import 'sample_feature/sample_item_details_view.dart';
+import 'sample_feature/sample_item_list_view.dart';
+import 'site/single_page.dart';
 
 /// The Widget that configures your application.
 class AppWidget extends StatelessWidget {
@@ -13,6 +19,31 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final GoRouter router = GoRouter(
+      routes: <RouteBase>[
+        GoRoute(
+            path: SinglePage.routeName,
+            builder: (BuildContext context, GoRouterState state) =>
+                SinglePage(settingsController: settingsController)),
+        GoRoute(
+            path: SampleItemListView.routeName,
+            builder: (BuildContext context, GoRouterState state) =>
+                const SampleItemListView()),
+        GoRoute(
+            path: PrivacidadePage.routeName,
+            builder: (BuildContext context, GoRouterState state) =>
+                const PrivacidadePage()),
+        GoRoute(
+            path: SettingsPage.routeName,
+            builder: (BuildContext context, GoRouterState state) =>
+                SettingsPage(settingsController: settingsController)),
+        GoRoute(
+            path: SampleItemDetailsView.routeName,
+            builder: (BuildContext context, GoRouterState state) =>
+                const SampleItemDetailsView()),
+      ],
+    );
+
     return AnimatedBuilder(
       animation: settingsController,
       builder: (BuildContext context, Widget? child) {
@@ -35,7 +66,7 @@ class AppWidget extends StatelessWidget {
           theme: settingsController.themeDataLight,
           darkTheme: settingsController.themeDataDark,
           themeMode: settingsController.themeMode,
-          routerConfig: Modular.routerConfig,
+          routerConfig: router,
         );
       },
     );

@@ -30,6 +30,7 @@ class _HomeState extends State<Home> {
           SafeArea(
             child: Image.asset(
               'assets/images/background.png',
+              height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               alignment: Alignment.bottomRight,
             ),
@@ -53,7 +54,7 @@ class _HomeState extends State<Home> {
                   children: [
                     GestureDetector(
                       onLongPress: () =>
-                          Modular.to.pushNamed(SettingsPage.routeName),
+                          GoRouter.of(context).go(SettingsPage.routeName),
                       child: Image.asset(
                         'assets/images/hi.gif',
                         height: height * 0.03,

@@ -47,14 +47,13 @@ class _SinglePageState extends State<SinglePage> {
     Icons.person,
     Icons.school,
     Icons.work,
-    // Icons.emoji_events,
     Icons.phone,
   ];
 
   void _scroll(int position) {
     _itemScrollController.scrollTo(
       index: position,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 800),
     );
   }
 
@@ -70,14 +69,10 @@ class _SinglePageState extends State<SinglePage> {
     } else if (i == 4) {
       return const Contact();
     } else if (i == 5) {
-      return const SizedBox(
-        height: 40.0,
-      );
-    } else if (i == 6) {
       return ArrowOnTop(
         onPressed: () => _scroll(0),
       );
-    } else if (i == 7) {
+    } else if (i == 6) {
       return const Footer();
     } else {
       return Container();
@@ -106,7 +101,7 @@ class _SinglePageState extends State<SinglePage> {
                 IconButton(
                   icon: const Icon(Icons.settings),
                   onPressed: () {
-                    Modular.to.pushNamed(SettingsPage.routeName);
+                    GoRouter.of(context).go(SettingsPage.routeName);
                   },
                 ),
               ],
@@ -118,7 +113,7 @@ class _SinglePageState extends State<SinglePage> {
         child: ScrollablePositionedList.builder(
           itemScrollController: _itemScrollController,
           itemPositionsListener: _itemPositionListener,
-          itemCount: 8,
+          itemCount: 6,
           itemBuilder: (context, index) {
             return SingleChildScrollView(child: sectionWidget(index));
           },

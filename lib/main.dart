@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:turttle/core.dart';
-import 'package:turttle/pages.dart';
 import 'package:turttle/settings.dart';
-import 'package:williankirsch/src/privacidade/privacidade_page.dart';
 
 import 'src/app.dart';
-import 'src/sample_feature/sample_item_details_view.dart';
-import 'src/sample_feature/sample_item_list_view.dart';
-
 import 'src/settings/settings_service.dart';
-import 'src/site/single_page.dart';
 
 void main() async {
   // configureApp();
@@ -29,39 +22,9 @@ void main() async {
   // SettingsController for changes, then passes it further down to the
   // SettingsView.
   runApp(
-    ModularApp(
-      module: AppModule(
-        settingsController: settingsController,
-      ),
-      child: AppWidget(
-        settingsController: settingsController,
-      ),
+    AppWidget(
+      settingsController: settingsController,
     ),
   );
   //runApp();
-}
-
-class AppModule extends Module {
-  AppModule({required this.settingsController});
-
-  final SettingsController settingsController;
-
-  @override
-  void binds(Injector i) => [];
-
-  @override
-  void routes(RouteManager r) => [
-        r.child(SinglePage.routeName,
-            child: (context) =>
-                SinglePage(settingsController: settingsController)),
-        r.child(SampleItemListView.routeName,
-            child: (context) => const SampleItemListView()),
-        r.child(PrivacidadePage.routeName,
-            child: (context) => const PrivacidadePage()),
-        r.child(SettingsPage.routeName,
-            child: (context) =>
-                SettingsPage(settingsController: settingsController)),
-        r.child(SampleItemDetailsView.routeName,
-            child: (context) => const SampleItemDetailsView()),
-      ];
 }
