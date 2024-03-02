@@ -102,9 +102,8 @@ class _ProjectCardState extends State<PortfolioCard> {
                   widget.projectDescription,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontSize: height * 0.015,
+                      fontSize: height * 0.025,
                       letterSpacing: 2.0,
-                      fontWeight: FontWeight.w100,
                       height: width >= 600 ? 2.0 : 1.5,
                       color: Theme.of(context).colorScheme.primary),
                 ),

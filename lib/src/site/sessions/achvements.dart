@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:williankirsch/src/core/core.dart';
 
 import '../widgets/certificates_card.dart';
+import 'widgets/scaffold_session.dart';
 
 class Achvements extends StatelessWidget {
   const Achvements({super.key});
@@ -14,25 +15,11 @@ class Achvements extends StatelessWidget {
     final double cardWidth = width < 1200 ? width * 0.75 : width * 0.28;
     final double cardHeight = width < 1200 ? height * 0.30 : height * 0.30;
 
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: width * 0.04,
-        vertical: height * 0.04,
-      ),
-      color: Theme.of(context).colorScheme.background,
-      child: Column(
+    return ScaffoldSession(
+      title: 'Certificados',
+      color: Theme.of(context).colorScheme.primaryContainer,
+      body: Column(
         children: [
-          Text(
-            'Certificados',
-            style: TextStyle(
-              fontSize: height * 0.06,
-              fontWeight: FontWeight.w100,
-              letterSpacing: 1.0,
-            ),
-          ),
-          SizedBox(
-            height: height * 0.04,
-          ),
           Flex(
             direction: width < 1200 ? Axis.vertical : Axis.horizontal,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -84,9 +71,6 @@ class Achvements extends StatelessWidget {
             },
             child: const Text(
               'Veja mais',
-              style: TextStyle(
-                fontWeight: FontWeight.w200,
-              ),
             ),
           ),
         ],

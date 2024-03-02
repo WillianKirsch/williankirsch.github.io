@@ -85,7 +85,7 @@ class _HomeState extends State<Home> {
                   'Kirsch',
                   style: TextStyle(
                     fontSize: height * 0.055,
-                    fontWeight: FontWeight.w100,
+                    fontWeight: FontWeight.w300,
                     letterSpacing: 1.1,
                     color: PurpleColors.lightest,
                   ),
@@ -99,8 +99,8 @@ class _HomeState extends State<Home> {
                     DefaultTextStyle(
                       style: TextStyle(
                         fontSize:
-                            width < 1200 ? height * 0.030 : height * 0.050,
-                        fontWeight: FontWeight.w200,
+                            width < 1200 ? height * 0.030 : height * 0.040,
+                        fontWeight: FontWeight.w100,
                         color: PurpleColors.lightest,
                       ),
                       child: AnimatedTextKit(

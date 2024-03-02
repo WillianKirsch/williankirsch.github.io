@@ -101,7 +101,7 @@ class _SinglePageState extends State<SinglePage> {
                 IconButton(
                   icon: const Icon(Icons.settings),
                   onPressed: () {
-                    GoRouter.of(context).go(SettingsPage.routeName);
+                    GoRouter.of(context).push(SettingsPage.routeName);
                   },
                 ),
               ],
@@ -110,13 +110,15 @@ class _SinglePageState extends State<SinglePage> {
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        child: ScrollablePositionedList.builder(
-          itemScrollController: _itemScrollController,
-          itemPositionsListener: _itemPositionListener,
-          itemCount: 6,
-          itemBuilder: (context, index) {
-            return SingleChildScrollView(child: sectionWidget(index));
-          },
+        child: SafeArea(
+          child: ScrollablePositionedList.builder(
+            itemScrollController: _itemScrollController,
+            itemPositionsListener: _itemPositionListener,
+            itemCount: 6,
+            itemBuilder: (context, index) {
+              return SingleChildScrollView(child: sectionWidget(index));
+            },
+          ),
         ),
       ),
     );
@@ -137,20 +139,21 @@ class _SinglePageState extends State<SinglePage> {
         : Padding(
             padding: const EdgeInsets.all(8.0),
             child: MaterialButton(
-                onPressed: () => _scroll(index),
-                child: Center(
-                  child: ListTile(
-                    leading: Icon(
-                      icon,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                    title: Text(
-                      childText,
-                      style: TextStyle(
-                          color: Theme.of(context).colorScheme.inversePrimary),
-                    ),
+              onPressed: () => _scroll(index),
+              child: Center(
+                child: ListTile(
+                  leading: Icon(
+                    icon,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
-                )),
+                  title: Text(
+                    childText,
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary),
+                  ),
+                ),
+              ),
+            ),
           );
   }
 
@@ -171,21 +174,17 @@ class _SinglePageState extends State<SinglePage> {
       actions: [
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i]),
-        Padding(
-          padding: const EdgeInsets.all(8),
-          child: MaterialButton(
-            color: Theme.of(context).colorScheme.secondary,
-            hoverColor: Theme.of(context).colorScheme.tertiary,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-            onPressed: _getResume,
-            child: Text(
-              'Currículo',
-              style: TextStyle(
-                fontWeight: FontWeight.w200,
-                color: Theme.of(context).colorScheme.onSecondary,
-              ),
+        FilledButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(
+                Theme.of(context).colorScheme.secondary),
+          ),
+          onPressed: _getResume,
+          child: Text(
+            'Currículo',
+            style: TextStyle(
+              fontWeight: FontWeight.w400,
+              color: Theme.of(context).colorScheme.onSecondary,
             ),
           ),
         ),
@@ -256,7 +255,6 @@ class _SinglePageState extends State<SinglePage> {
                     title: Text(
                       'Currículo',
                       style: TextStyle(
-                        fontWeight: FontWeight.w200,
                         color: Theme.of(context).colorScheme.onSecondary,
                       ),
                     ),

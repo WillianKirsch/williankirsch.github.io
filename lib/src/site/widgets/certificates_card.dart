@@ -88,7 +88,7 @@ class _CertificatesCardState extends State<CertificatesCard> {
                   style: TextStyle(
                       fontSize: height * 0.015,
                       letterSpacing: 2.0,
-                      fontWeight: FontWeight.w100,
+                      fontWeight: FontWeight.w300,
                       height: width >= 600 ? 2.0 : 1.5),
                 ),
                 SizedBox(
