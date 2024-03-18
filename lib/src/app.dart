@@ -9,8 +9,8 @@ import 'sample_feature/sample_item_list_view.dart';
 import 'site/single_page.dart';
 
 /// The Widget that configures your application.
-class AppWidget extends StatelessWidget {
-  const AppWidget({
+class MainApp extends StatelessWidget {
+  const MainApp({
     super.key,
     required this.settingsController,
   });

@@ -149,7 +149,7 @@ class _SinglePageState extends State<SinglePage> {
                   title: Text(
                     childText,
                     style: TextStyle(
-                        color: Theme.of(context).colorScheme.inversePrimary),
+                        color: Theme.of(context).colorScheme.surfaceTint),
                   ),
                 ),
               ),
@@ -230,9 +230,10 @@ class _SinglePageState extends State<SinglePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Center(
+              Center(
                 child: NavBarLogo(
                   height: 28,
+                  color: Theme.of(context).colorScheme.surfaceTint,
                 ),
               ),
               for (int i = 0; i < _sectionsName.length; i++)

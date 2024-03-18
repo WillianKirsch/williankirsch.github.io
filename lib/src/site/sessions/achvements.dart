@@ -13,7 +13,7 @@ class Achvements extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
 
     final double cardWidth = width < 1200 ? width * 0.75 : width * 0.28;
-    final double cardHeight = width < 1200 ? height * 0.30 : height * 0.30;
+    final double cardHeight = width < 1200 ? height * 0.23 : height * 0.30;
 
     return ScaffoldSession(
       title: 'Certificados',

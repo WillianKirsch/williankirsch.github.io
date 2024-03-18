@@ -26,7 +26,8 @@ class ScaffoldSession extends StatelessWidget {
         vertical: height * 0.04,
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        textDirection: TextDirection.ltr,
         children: [
           TitleSession(title: title),
           body,

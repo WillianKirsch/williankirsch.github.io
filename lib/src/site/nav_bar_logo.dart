@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class NavBarLogo extends StatelessWidget {
-  const NavBarLogo({super.key, required this.height});
+  const NavBarLogo({super.key, required this.height, this.color});
 
   final double height;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +17,7 @@ class NavBarLogo extends StatelessWidget {
           Image.asset(
             'assets/images/Logo.png',
             height: height,
+            color: color,
           ),
         ],
       ),
