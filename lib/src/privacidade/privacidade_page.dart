@@ -8,7 +8,7 @@ class PrivacidadePage extends StatelessWidget {
     super.key,
   });
 
-  static const routeName = '/privacidade';
+  static const routeName = 'privacidade';
 
   @override
   Widget build(BuildContext context) {

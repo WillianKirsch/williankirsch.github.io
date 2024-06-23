@@ -23,40 +23,33 @@ class Contact extends StatelessWidget {
         direction: width < 1200 ? Axis.vertical : Axis.horizontal,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          PortfolioCard(
-            cardWidth: cardWidth,
-            cardHeight: cardHeight,
-            projectIconData: myContactIcons[0],
-            projectTitle: myContactTitles[0],
-            projectDescription: myContactDetails[0],
-            projectLink: myContactLinks[0],
-          ),
-          SizedBox(
-            width: width * 0.02,
-            height: height * 0.02,
-          ),
-          PortfolioCard(
-            cardWidth: cardWidth,
-            cardHeight: cardHeight,
-            projectIconData: myContactIcons[1],
-            projectTitle: myContactTitles[1],
-            projectDescription: myContactDetails[1],
-            projectLink: myContactLinks[1],
-          ),
-          SizedBox(
-            width: width * 0.02,
-            height: height * 0.02,
-          ),
-          PortfolioCard(
-            cardWidth: cardWidth,
-            cardHeight: cardHeight,
-            projectIconData: myContactIcons[2],
-            projectTitle: myContactTitles[2],
-            projectDescription: myContactDetails[2],
-            projectLink: myContactLinks[2],
-          ),
+          ...getContacts(cardWidth, cardHeight),
         ],
       ),
     );
+  }
+
+  List<Widget> getContacts(double cardWidth, double cardHeight) {
+    final List<Widget> contacts = [];
+    for (var i = 0; i < myContactIcons.length; i++) {
+      contacts.add(
+        PortfolioCard(
+          cardWidth: cardWidth,
+          cardHeight: cardHeight,
+          projectIconData: myContactIcons[i],
+          projectTitle: myContactTitles[i],
+          projectDescription: myContactDetails[i],
+          projectLink: myContactLinks[i],
+        ),
+      );
+
+      if (i < myContactIcons.length) {
+        contacts.add(SizedBox(
+          width: cardWidth * 0.20,
+          height: cardHeight * 0.20,
+        ));
+      }
+    }
+    return contacts;
   }
 }

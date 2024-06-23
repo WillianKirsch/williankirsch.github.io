@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:purple_ds/purple_design_system.dart';
 import 'package:purple_ds/purple_widgets.dart';
@@ -7,6 +8,7 @@ import 'package:turttle/pages.dart';
 import 'package:turttle/settings.dart';
 
 import 'package:williankirsch/src/core/constants.dart';
+import 'package:williankirsch/src/tools/tools_home_page.dart';
 
 import 'nav_bar_logo.dart';
 import 'sessions/about.dart';
@@ -24,7 +26,7 @@ class SinglePage extends StatefulWidget {
   });
 
   final SettingsController settingsController;
-  static const routeName = '/';
+  static const routeName = '';
 
   @override
   State<SinglePage> createState() => _SinglePageState();
@@ -63,7 +65,7 @@ class _SinglePageState extends State<SinglePage> {
     } else if (i == 1) {
       return const About();
     } else if (i == 2) {
-      return Education();
+      return const Education();
     } else if (i == 3) {
       return const Achvements();
     } else if (i == 4) {
@@ -84,6 +86,7 @@ class _SinglePageState extends State<SinglePage> {
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
       extendBodyBehindAppBar: true,
       appBar: width > 1000
           ? _appBarTabDesktop()
@@ -92,16 +95,15 @@ class _SinglePageState extends State<SinglePage> {
               backgroundColor: Theme.of(context).primaryColor,
               elevation: 0.0,
               actions: [
+                if (kDebugMode)
+                  IconButton(
+                    icon: const Icon(Icons.settings),
+                    onPressed: _goToSettings,
+                  ),
                 BrightnessButton(
                   handleBrightnessChange: (bool value) {
                     widget.settingsController.updateThemeMode(
                         value ? ThemeMode.light : ThemeMode.dark);
-                  },
-                ),
-                IconButton(
-                  icon: const Icon(Icons.settings),
-                  onPressed: () {
-                    GoRouter.of(context).push(SettingsPage.routeName);
                   },
                 ),
               ],
@@ -127,8 +129,10 @@ class _SinglePageState extends State<SinglePage> {
   Widget _appBarActions(String childText, int index, IconData icon) {
     return MediaQuery.of(context).size.width > 1000
         ? Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: MaterialButton(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: ElevatedButton(
+              style:
+                  ElevatedButton.styleFrom(backgroundColor: Colors.transparent),
               onPressed: () => _scroll(index),
               child: Text(
                 childText,
@@ -163,7 +167,8 @@ class _SinglePageState extends State<SinglePage> {
 
     return AppBar(
       elevation: 0.0,
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Colors.transparent,
+      toolbarHeight: height * 0.090,
       title: width < 740
           ? NavBarLogo(
               height: height * 0.035,
@@ -174,44 +179,60 @@ class _SinglePageState extends State<SinglePage> {
       actions: [
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i]),
-        FilledButton(
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(
-                Theme.of(context).colorScheme.secondary),
+        if (kDebugMode)
+          Theme(
+            data: Theme.of(context).copyWith(
+              iconTheme: IconThemeData(
+                  color: Theme.of(context).colorScheme.onSecondary),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 14),
+              child: IconButton(
+                  icon: const Icon(Icons.settings), onPressed: _goToSettings),
+            ),
           ),
-          onPressed: _getResume,
-          child: Text(
-            'Currículo',
-            style: TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Theme.of(context).colorScheme.onSecondary,
+        Theme(
+          data: Theme.of(context).copyWith(
+            iconTheme:
+                IconThemeData(color: Theme.of(context).colorScheme.onSecondary),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 14),
+            child: BrightnessButton(
+              handleBrightnessChange: (bool value) {
+                widget.settingsController
+                    .updateThemeMode(value ? ThemeMode.light : ThemeMode.dark);
+              },
+              showTooltipBelow: true,
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 14),
-          child: SizedBox(
-            width: 50,
-            child: Theme(
-              data: Theme.of(context).copyWith(
-                iconTheme: IconThemeData(
-                    color: Theme.of(context).colorScheme.onSecondary),
-              ),
-              child: BrightnessButton(
-                handleBrightnessChange: (bool value) {
-                  widget.settingsController.updateThemeMode(
-                      value ? ThemeMode.light : ThemeMode.dark);
-                },
-                showTooltipBelow: true,
+        if (liberarFerramentas)
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).colorScheme.secondary),
+            onPressed: _goToTools,
+            child: Text(
+              'Ferramentas',
+              style: TextStyle(
+                fontWeight: FontWeight.w400,
+                color: Theme.of(context).colorScheme.onSecondary,
               ),
             ),
           ),
-        ),
         const SizedBox(
           width: 24,
         )
       ],
     );
+  }
+
+  void _goToSettings() {
+    GoRouter.of(context).push('/${SettingsPage.routeName}');
+  }
+
+  void _goToTools() {
+    GoRouter.of(context).go('/${ToolsHomePage.routeName}');
   }
 
   Future<void> _getResume() async {
@@ -238,30 +259,31 @@ class _SinglePageState extends State<SinglePage> {
               ),
               for (int i = 0; i < _sectionsName.length; i++)
                 _appBarActions(_sectionsName[i], i, _sectionsIcons[i]),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: MaterialButton(
-                  color: Theme.of(context).colorScheme.secondary,
-                  hoverColor: Theme.of(context).colorScheme.tertiary,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                      side: BorderSide(
-                          color: Theme.of(context).colorScheme.secondary)),
-                  onPressed: _getResume,
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.book,
-                      color: Theme.of(context).colorScheme.onSecondary,
-                    ),
-                    title: Text(
-                      'Currículo',
-                      style: TextStyle(
+              if (liberarFerramentas)
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: MaterialButton(
+                    color: Theme.of(context).colorScheme.secondary,
+                    hoverColor: Theme.of(context).colorScheme.tertiary,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                        side: BorderSide(
+                            color: Theme.of(context).colorScheme.secondary)),
+                    onPressed: _goToTools,
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.architecture,
                         color: Theme.of(context).colorScheme.onSecondary,
+                      ),
+                      title: Text(
+                        'Ferramentas',
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.onSecondary,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
             ],
           ),
         ),

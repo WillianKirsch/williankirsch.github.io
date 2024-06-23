@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'core.dart';
 
+const bool liberarFerramentas = false;
+
 final Uri resume = Uri(
   scheme: 'https',
   host: 'drive.google.com',
@@ -14,16 +16,16 @@ final socialIcons = [
   Images.linkedin,
   Images.github,
   Images.instagram,
-  Images.google,
-  Images.google,
+  // Images.google,
+  // Images.google,
 ];
 
 const socialLinks = [
   'https://www.linkedin.com/in/williankirsch',
   'https://github.com/williankirsch',
-  'https://www.instagram.com/williankirsch.dev',
-  'https://developers.google.com/profile/u/williankirsch',
-  'https://gdg.community.dev/u/mja9dx'
+  'https://www.instagram.com/williankirsch',
+  // 'https://developers.google.com/profile/u/williankirsch',
+  // 'https://gdg.community.dev/u/mja9dx'
 ];
 
 // Tools & Tech
@@ -78,24 +80,24 @@ final myCertificatesLinks = [
 // Contact
 final myContactIcons = [
   Icons.home,
-  Icons.phone,
+  // Icons.phone,
   Icons.mail,
 ];
 
 final myContactTitles = [
   'Localização',
-  'Celular',
+  // 'Celular',
   'Email',
 ];
 
 final myContactDetails = [
   'Santa Catarina, Brasil',
-  '+55 (47) 991240218',
+  // '+55 (47) 991240218',
   'willian.kirsch@gmail.com'
 ];
 
 final myContactLinks = [
   'https://www.google.com/maps/place/Itapema,+SC,+88220-000/@-27.0930705,-48.6370592,14z/data=!3m1!4b1!4m5!3m4!1s0x94d8b10cf4da0413:0x231d20d09ad9775c!8m2!3d-27.0909014!4d-48.6151468',
-  'https://wa.me/5547991240218',
+  // 'https://wa.me/5547991240218',
   'mailto:willian.kirsch@gmail.com',
 ];

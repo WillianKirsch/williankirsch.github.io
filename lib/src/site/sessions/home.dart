@@ -21,8 +21,7 @@ class _HomeState extends State<Home> {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
 
-    return Container(
-      color: Theme.of(context).primaryColor,
+    return SizedBox(
       height: height,
       width: width,
       child: Stack(
@@ -53,8 +52,8 @@ class _HomeState extends State<Home> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     GestureDetector(
-                      onLongPress: () =>
-                          GoRouter.of(context).go(SettingsPage.routeName),
+                      onLongPress: () => GoRouter.of(context)
+                          .push('/${SettingsPage.routeName}'),
                       child: Image.asset(
                         'assets/images/hi.gif',
                         height: height * 0.03,
@@ -107,9 +106,11 @@ class _HomeState extends State<Home> {
                           isRepeatingAnimation: true,
                           repeatForever: true,
                           animatedTexts: [
-                            TyperAnimatedText('Engenheiro de Software'),
-                            TyperAnimatedText('Empreendedor'),
+                            TyperAnimatedText('Líder de equipe'),
                             TyperAnimatedText('Cientista da Computação'),
+                            TyperAnimatedText('Empreendedor'),
+                            TyperAnimatedText('Engenheiro de Software'),
+                            TyperAnimatedText('Professor'),
                           ]),
                     ),
                   ],

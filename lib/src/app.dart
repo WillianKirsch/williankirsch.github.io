@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:material_3_purple/home.dart';
 import 'package:turttle/core.dart';
 import 'package:turttle/pages.dart';
 import 'package:turttle/settings.dart';
+import 'package:williankirsch/src/sample_feature/sample_item.dart';
+import 'package:williankirsch/src/tools/tools_home_page.dart';
 
 import 'privacidade/privacidade_page.dart';
-import 'sample_feature/sample_item_details_view.dart';
-import 'sample_feature/sample_item_list_view.dart';
+import 'sample_feature/sample_item_details_page.dart';
+import 'sample_feature/sample_item_list_page.dart';
 import 'site/single_page.dart';
 
 /// The Widget that configures your application.
@@ -22,25 +25,60 @@ class MainApp extends StatelessWidget {
     final GoRouter router = GoRouter(
       routes: <RouteBase>[
         GoRoute(
-            path: SinglePage.routeName,
-            builder: (BuildContext context, GoRouterState state) =>
-                SinglePage(settingsController: settingsController)),
+          path: '/',
+          builder: (BuildContext context, GoRouterState state) =>
+              SinglePage(settingsController: settingsController),
+          routes: [
+            GoRoute(
+                path: 'ds',
+                builder: (BuildContext context, GoRouterState state) =>
+                    HomeDesignSystemPage(
+                        settingsController: settingsController)),
+          ],
+        ),
         GoRoute(
-            path: SampleItemListView.routeName,
+            path: '/${ToolsHomePage.routeName}',
             builder: (BuildContext context, GoRouterState state) =>
-                const SampleItemListView()),
+                const ToolsHomePage()),
         GoRoute(
-            path: PrivacidadePage.routeName,
+            path: '/${SampleItemListPage.routeName}',
+            builder: (BuildContext context, GoRouterState state) =>
+                const SampleItemListPage(),
+            routes: [
+              GoRoute(
+                  path: SampleItemDetailsPage.routeName,
+                  redirect: (BuildContext context, GoRouterState state) {
+                    final item = state.extra as SampleItem?;
+                    if (item == null) {
+                      return '/';
+                    } else {
+                      return null;
+                    }
+                  },
+                  builder: (BuildContext context, GoRouterState state) {
+                    final item = state.extra as SampleItem;
+
+                    return SampleItemDetailsPage(item: item);
+                  }),
+            ]),
+        GoRoute(
+            path: '/${PrivacidadePage.routeName}',
             builder: (BuildContext context, GoRouterState state) =>
                 const PrivacidadePage()),
         GoRoute(
-            path: SettingsPage.routeName,
-            builder: (BuildContext context, GoRouterState state) =>
-                SettingsPage(settingsController: settingsController)),
-        GoRoute(
-            path: SampleItemDetailsView.routeName,
-            builder: (BuildContext context, GoRouterState state) =>
-                const SampleItemDetailsView()),
+          path: '/${SettingsPage.routeName}',
+          builder: (BuildContext context, GoRouterState state) => SettingsPage(
+            settingsController: settingsController,
+            widgets: [
+              ElevatedButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/ds');
+                },
+                child: const Text('Design System'),
+              ),
+            ],
+          ),
+        ),
       ],
     );
 
