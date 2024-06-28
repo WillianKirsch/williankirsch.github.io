@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:turttle/core.dart';
 import 'package:turttle/settings.dart';
 
 import 'src/app.dart';
@@ -17,7 +16,8 @@ void main() async {
   // This prevents a sudden theme change when the app is first displayed.
   await settingsController.loadSettings();
 
-  setPathUrlStrategy();
+  // Removido por causar 404 nas páginas filhas
+  // setPathUrlStrategy();
 
   // Run the app and pass in the SettingsController. The app listens to the
   // SettingsController for changes, then passes it further down to the
