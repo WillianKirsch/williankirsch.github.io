@@ -116,9 +116,11 @@ class _SinglePageState extends State<SinglePage> {
           child: ScrollablePositionedList.builder(
             itemScrollController: _itemScrollController,
             itemPositionsListener: _itemPositionListener,
-            itemCount: 6,
+            itemCount: 7,
             itemBuilder: (context, index) {
-              return SingleChildScrollView(child: sectionWidget(index));
+              return SingleChildScrollView(
+                child: sectionWidget(index),
+              );
             },
           ),
         ),

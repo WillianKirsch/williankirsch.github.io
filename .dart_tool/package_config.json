@@ -3,7 +3,7 @@
   "packages": [
     {
       "name": "_flutterfire_internals",
-      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/_flutterfire_internals-1.3.37",
+      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/_flutterfire_internals-1.3.35",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -104,8 +104,26 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "firebase_auth",
+      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_auth-4.20.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "firebase_auth_platform_interface",
+      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_auth_platform_interface-7.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "firebase_auth_web",
+      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_auth_web-5.12.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "firebase_core",
-      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_core-3.1.0",
+      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_core-2.32.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -123,31 +141,31 @@
     },
     {
       "name": "firebase_crashlytics",
-      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_crashlytics-4.0.1",
+      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_crashlytics-3.5.7",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "firebase_crashlytics_platform_interface",
-      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_crashlytics_platform_interface-3.6.37",
+      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_crashlytics_platform_interface-3.6.35",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "firebase_remote_config",
-      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_remote_config-5.0.1",
+      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_remote_config-4.4.7",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "firebase_remote_config_platform_interface",
-      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_remote_config_platform_interface-1.4.37",
+      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_remote_config_platform_interface-1.4.35",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "firebase_remote_config_web",
-      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_remote_config_web-1.6.9",
+      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/firebase_remote_config_web-1.6.7",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -195,9 +213,9 @@
     },
     {
       "name": "google_mobile_ads",
-      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/google_mobile_ads-5.1.0",
+      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/google_mobile_ads-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.15"
     },
     {
       "name": "hive",
@@ -662,7 +680,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-06-22T19:43:11.965416Z",
+  "generated": "2024-06-28T12:33:57.997564Z",
   "generator": "pub",
   "generatorVersion": "3.3.4"
 }

@@ -1,4 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:turttle/core.dart';
+import 'package:williankirsch/src/privacidade/privacidade_page.dart';
 
 class Footer extends StatelessWidget {
   const Footer({
@@ -14,11 +17,57 @@ class Footer extends StatelessWidget {
       height: height * 0.07,
       width: width,
       color: Theme.of(context).colorScheme.background,
-      child: const Center(
-        child: Text(
-          'Criado por Willian Kirsch',
-          style: TextStyle(fontWeight: FontWeight.w100),
-        ),
+      child: Column(
+        children: [
+          const Center(
+            child: Text(
+              'Criado por Willian Kirsch',
+              style: TextStyle(fontWeight: FontWeight.w100),
+            ),
+          ),
+          RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: 'Termos de Uso',
+                  style: const TextStyle(
+                    color: Color(0xFFFFF7ED),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    decoration: TextDecoration.underline,
+                    decorationColor: Color(0xFFFFFFFF),
+                  ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      GoRouter.of(context).go('/${PrivacidadePage.routeName}');
+                    },
+                ),
+                const TextSpan(
+                  text: ' e ',
+                  style: TextStyle(
+                    color: Color(0xFFFFF7ED),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                TextSpan(
+                  text: 'Política de Privacidade.',
+                  style: const TextStyle(
+                    color: Color(0xFFFFF7ED),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    decoration: TextDecoration.underline,
+                    decorationColor: Color(0xFFFFFFFF),
+                  ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      GoRouter.of(context).go('/${PrivacidadePage.routeName}');
+                    },
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
