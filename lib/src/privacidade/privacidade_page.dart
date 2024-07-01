@@ -46,6 +46,21 @@ class PrivacidadePage extends StatelessWidget {
                 fontSize: 16,
               ),
             ),
+            SizedBox(height: 40),
+            Text(
+              PrivacidadeModel.protecaoDadosTitulo,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              PrivacidadeModel.protecaoDadosTexto,
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
           ],
         ),
       ),
