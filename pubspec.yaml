@@ -25,6 +25,7 @@ dependencies:
   scrollable_positioned_list: ^0.3.8
   animated_text_kit: ^4.2.2
   flutter_svg: ^2.0.10
+  flutter_markdown: ^0.7.3
 
 dev_dependencies:
   flutter_lints: ^3.0.2
@@ -39,6 +40,7 @@ flutter:
 
   assets:
     - assets/app-ads.txt
+    - assets/privacidade.md
     # Add assets from the images directory to the application.
     - assets/images/
     - assets/terceiros/

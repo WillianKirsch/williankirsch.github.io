@@ -188,6 +188,12 @@
       "languageVersion": "3.1"
     },
     {
+      "name": "flutter_markdown",
+      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/flutter_markdown-0.7.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
       "name": "flutter_svg",
       "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/flutter_svg-2.0.10+1",
       "packageUri": "lib/",
@@ -292,6 +298,12 @@
     {
       "name": "lottie",
       "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/lottie-3.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "markdown",
+      "rootUri": "file:///Users/willian.kirsch/.pub-cache/hosted/pub.dev/markdown-7.2.2",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -680,7 +692,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-06-28T12:33:57.997564Z",
+  "generated": "2024-07-04T16:39:17.743505Z",
   "generator": "pub",
   "generatorVersion": "3.3.4"
 }

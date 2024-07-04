@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '../models/privacidade_model.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 /// Displays a list of SampleItems.
-class PrivacidadePage extends StatelessWidget {
+class PrivacidadePage extends StatefulWidget {
   const PrivacidadePage({
     super.key,
   });
@@ -11,58 +10,41 @@ class PrivacidadePage extends StatelessWidget {
   static const routeName = 'privacidade';
 
   @override
+  State<PrivacidadePage> createState() => _PrivacidadePageState();
+}
+
+class _PrivacidadePageState extends State<PrivacidadePage> {
+  String? privacidade;
+
+  void loadAsset(BuildContext context) {
+    DefaultAssetBundle.of(context)
+        .loadString('assets/privacidade.md')
+        .then((value) => setState(() {
+              privacidade = value;
+            }));
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    if (privacidade == null) {
+      loadAsset(context);
+    }
+    return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(24.0),
-        child: Column(
-          children: [
-            Text(
-              PrivacidadeModel.titulo,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+        padding: const EdgeInsets.all(24.0),
+        child: privacidade == null
+            ? const SizedBox.shrink()
+            : Markdown(
+                data: privacidade!,
+                styleSheet: MarkdownStyleSheet(
+                  h1: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  h2: const TextStyle(fontSize: 20),
+                  a: const TextStyle(color: Colors.blue),
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            Text(
-              PrivacidadeModel.texto,
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
-            SizedBox(height: 40),
-            Text(
-              PrivacidadeModel.terceirosTitulo,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 20),
-            Text(
-              PrivacidadeModel.terceirosTexto,
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
-            SizedBox(height: 40),
-            Text(
-              PrivacidadeModel.protecaoDadosTitulo,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 20),
-            Text(
-              PrivacidadeModel.protecaoDadosTexto,
-              style: TextStyle(
-                fontSize: 16,
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
