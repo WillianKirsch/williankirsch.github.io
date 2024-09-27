@@ -1,5 +1,5 @@
 # GOOGLE ADMOB
-google.com, pub-1029454675660858, DIRECT, f08c47fec0942fa0
+google.com, pub-5055230112530967, DIRECT, f08c47fec0942fa0
 
 # APPLOVIN
 applovin.com, 9c4c30d9a13f5540f1faeb04ac54a226, DIRECT
