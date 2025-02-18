@@ -37,6 +37,9 @@ xandr.com, 14082, RESELLER
 zmaticoo.com, 5135655, RESELLER
 facebook.com, 414739597775603, RESELLER
 
+# PANGLE
+pangleglobal.com, 5026620, DIRECT
+
 # META
 facebook.com, 414739597775603, DIRECT, c3e20eee3f780d68
 
