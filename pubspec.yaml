@@ -4,7 +4,7 @@ description: Site pessoal e portifólio de Willian Kirsch.
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'
 
-version: 1.2.1+4
+version: 1.2.2+5
 
 environment:
   sdk: '>=3.2.6 <4.0.0'
@@ -28,7 +28,7 @@ dependencies:
   flutter_markdown: ^0.7.3
 
 dev_dependencies:
-  flutter_lints: ^3.0.2
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
 

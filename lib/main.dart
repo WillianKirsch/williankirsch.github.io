@@ -14,7 +14,7 @@ void main() async {
 
   // Load the user's preferred theme while the splash screen is displayed.
   // This prevents a sudden theme change when the app is first displayed.
-  await settingsController.loadSettings();
+  await settingsController.inicializar();
 
   // Removido por causar 404 nas páginas filhas
   // setPathUrlStrategy();
